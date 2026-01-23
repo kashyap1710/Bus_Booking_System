@@ -2,13 +2,30 @@ import express from "express";
 import dotenv from "dotenv";
 import bookingRoutes from "./routes/booking.routes.js";
 import { db } from "./db/index.js";
+import availabilityRoutes from "./routes/availability.routes.js";
+
+
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
-app.use(express.json());
 
-app.use("/api/bookings", bookingRoutes);
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Debug Middleware to log incoming requests
+app.use((req, res, next) => {
+  console.log(`[${req.method}] ${req.url}`);
+  console.log("Headers:", JSON.stringify(req.headers, null, 2));
+  console.log("Body:", req.body);
+  next();
+});
+app.use("/api/availability", availabilityRoutes);
+
+app.use("/api", bookingRoutes);
 
 app.get("/", (req, res) => {
   res.send("Backend running 🚍");

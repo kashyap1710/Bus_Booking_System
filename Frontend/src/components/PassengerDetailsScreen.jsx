@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Phone, User, ArrowLeft, Loader2 } from "lucide-react";
+import { Mail, User, ArrowLeft, Loader2 } from "lucide-react";
 import RouteIndicator from "./RouteIndicator";
+import axios from "axios";
 
 export default function PassengerDetailsScreen({
   bookingData,
@@ -11,7 +12,7 @@ export default function PassengerDetailsScreen({
 }) {
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const ages = bookingData.passengerAges.map((a) => parseInt(a) || 0);
@@ -44,14 +45,36 @@ export default function PassengerDetailsScreen({
     }
 
     setIsLoading(true);
-    // Simulate booking API
-    setTimeout(() => {
-      const bookingId =
-        "BK" + Math.random().toString(36).substring(2, 10).toUpperCase();
-      updateBookingData({ bookingId });
+
+    try {
+      const payload = {
+        email: bookingData.email, // Send email
+        journeyDate: bookingData.date,
+        fromIndex: bookingData.fromStopIndex,
+        toIndex: bookingData.toStopIndex,
+        seatIds: bookingData.selectedSeats,
+        passengerGenders: bookingData.passengerGenders, // Send genders
+        meals: [
+          ...(bookingData.meals.veg > 0 ? [{ mealId: 1, qty: bookingData.meals.veg }] : []),
+          ...(bookingData.meals.nonVeg > 0 ? [{ mealId: 2, qty: bookingData.meals.nonVeg }] : [])
+        ],
+        totalAmount: bookingData.ticketPrice * bookingData.selectedSeats.length + 
+                     (bookingData.meals.veg * 120 + bookingData.meals.nonVeg * 150)
+      };
+
+      const response = await axios.post("http://localhost:5000/api/bookings", payload);
+
+      if (response.data.success) {
+        updateBookingData({ bookingId: response.data.bookingId });
+        showToast("Booking Successful!", "success");
+        onNext();
+      }
+    } catch (error) {
+      console.error("Booking Error:", error);
+      showToast(error.response?.data?.message || "Booking failed", "error");
+    } finally {
       setIsLoading(false);
-      onNext();
-    }, 2000);
+    }
   };
 
   const seatPrice = bookingData.ticketPrice * bookingData.selectedSeats.length;
@@ -179,25 +202,21 @@ export default function PassengerDetailsScreen({
                   </div>
                 ))}
 
-                {/* Mobile */}
+                {/* Email */}
                 <div>
                   <label className="block text-sm text-gray-300 mb-2">
-                    Mobile Number
+                    Email Address
                   </label>
                   <div className="relative">
-                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
                     <input
-                      type="tel"
-                      value={bookingData.mobileNumber}
+                      type="email"
+                      value={bookingData.email}
                       onChange={(e) =>
-                        updateBookingData({
-                          mobileNumber: e.target.value
-                            .replace(/\D/g, "")
-                            .slice(0, 10),
-                        })
+                        updateBookingData({ email: e.target.value })
                       }
                       className="w-full pl-12 px-4 py-3 border border-gray-600 bg-gray-700 text-white rounded-xl focus:ring-2 focus:ring-blue-500"
-                      placeholder="Enter your mobile number"
+                      placeholder="Enter your email address"
                       required
                     />
                   </div>
@@ -250,6 +269,13 @@ export default function PassengerDetailsScreen({
               <span className="text-2xl font-semibold text-blue-400">
                 ₹{seatPrice}
               </span>
+            </div>
+            {/* Email Summary */}
+            <div className="mt-4 pt-4 border-t border-gray-700">
+              <p className="text-gray-300 text-sm">
+                <span className="text-gray-400">Email:</span>{" "}
+                {bookingData.email}
+              </p>
             </div>
           </div>
         </div>

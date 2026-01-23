@@ -5,10 +5,17 @@ import {
   CreditCard,
   Utensils,
   Home,
+  XCircle,
+  Loader2
 } from "lucide-react";
 import RouteIndicator from "./RouteIndicator";
+import { useState } from "react";
+import axios from "axios";
 
 export default function BookingConfirmationScreen({ bookingData, onHome }) {
+  const [isCancelled, setIsCancelled] = useState(false);
+  const [isCancelling, setIsCancelling] = useState(false);
+
   const getMealPrice = () =>
     bookingData.meals.veg * 120 +
     bookingData.meals.nonVeg * 150;
@@ -19,20 +26,46 @@ export default function BookingConfirmationScreen({ bookingData, onHome }) {
   const getTotalAmount = () =>
     getSeatPrice() + getMealPrice();
 
+  const handleCancel = async () => {
+    if (!window.confirm("Are you sure you want to cancel this booking?")) return;
+
+    setIsCancelling(true);
+    try {
+      await axios.post("http://localhost:5000/api/bookings/cancel", {
+        bookingId: bookingData.bookingId
+      });
+      setIsCancelled(true);
+      alert("Booking cancelled successfully.");
+    } catch (error) {
+      console.error("Cancel Error:", error);
+      alert("Failed to cancel booking. Please try again.");
+    } finally {
+      setIsCancelling(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 px-6 py-14 flex justify-center">
       <div className="max-w-2xl w-full">
         {/* Success Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-24 h-24 bg-green-900/30 rounded-full mb-6">
-            <CheckCircle2 className="text-green-500" size={56} />
-          </div>
+          {isCancelled ? (
+            <div className="inline-flex items-center justify-center w-24 h-24 bg-red-900/30 rounded-full mb-6">
+              <XCircle className="text-red-500" size={56} />
+            </div>
+          ) : (
+            <div className="inline-flex items-center justify-center w-24 h-24 bg-green-900/30 rounded-full mb-6">
+              <CheckCircle2 className="text-green-500" size={56} />
+            </div>
+          )}
 
           <h1 className="text-3xl font-semibold mb-2">
-            Booking Confirmed!
+            {isCancelled ? "Booking Cancelled" : "Booking Confirmed!"}
           </h1>
           <p className="text-gray-400 mb-6">
-            Your sleeper bus ticket has been successfully booked
+            {isCancelled
+              ? "Your ticket has been cancelled."
+              : "Your sleeper bus ticket has been successfully booked"}
           </p>
 
           <RouteIndicator
@@ -46,13 +79,13 @@ export default function BookingConfirmationScreen({ bookingData, onHome }) {
           {/* Booking ID */}
           <div className="pb-6 mb-6 border-b border-gray-700">
             <p className="text-sm text-gray-400 mb-1">Booking ID</p>
-            <p className="text-xl font-semibold text-blue-400">
+            <p className={`text-xl font-semibold ${isCancelled ? "text-red-400 line-through" : "text-blue-400"}`}>
               {bookingData.bookingId}
             </p>
           </div>
 
           {/* Details */}
-          <div className="space-y-6">
+          <div className={`space-y-6 ${isCancelled ? "opacity-50" : ""}`}>
             {/* Route */}
             <InfoRow
               icon={<Bus />}
@@ -144,7 +177,7 @@ export default function BookingConfirmationScreen({ bookingData, onHome }) {
           </div>
 
           {/* Passenger Info */}
-          <div className="mt-8 bg-gray-700 rounded-xl p-6">
+          <div className={`mt-8 bg-gray-700 rounded-xl p-6 ${isCancelled ? "opacity-50" : ""}`}>
             <h3 className="font-medium mb-3">
               Passenger Information
             </h3>
@@ -161,24 +194,39 @@ export default function BookingConfirmationScreen({ bookingData, onHome }) {
             </ul>
 
             <p className="text-gray-300">
-              <span className="text-gray-400">Mobile:</span>{" "}
-              {bookingData.mobileNumber}
+              <span className="text-gray-400">Email:</span>{" "}
+              {bookingData.email}
             </p>
           </div>
 
           {/* SMS Info */}
-          <div className="mt-6 bg-blue-900/20 rounded-lg p-4 text-center text-sm text-blue-200">
-            A confirmation SMS has been sent to your mobile number
-          </div>
+          {!isCancelled && (
+            <div className="mt-6 bg-blue-900/20 rounded-lg p-4 text-center text-sm text-blue-200">
+              A confirmation email has been sent to your email address
+            </div>
+          )}
 
-          {/* Home Button */}
-          <button
-            onClick={onHome}
-            className="w-full mt-6 bg-gray-900 text-white py-4 rounded-xl text-lg font-medium hover:bg-black flex items-center justify-center gap-2"
-          >
-            <Home size={20} />
-            Back to Home
-          </button>
+          {/* Buttons */}
+          <div className="flex flex-col gap-3 mt-6">
+            <button
+              onClick={onHome}
+              className="w-full bg-gray-900 text-white py-4 rounded-xl text-lg font-medium hover:bg-black flex items-center justify-center gap-2"
+            >
+              <Home size={20} />
+              Back to Home
+            </button>
+
+            {!isCancelled && (
+              <button
+                onClick={handleCancel}
+                disabled={isCancelling}
+                className="w-full bg-red-900/20 text-red-500 py-4 rounded-xl text-lg font-medium hover:bg-red-900/30 flex items-center justify-center gap-2 border border-red-900/50"
+              >
+                {isCancelling ? <Loader2 className="animate-spin" /> : <XCircle size={20} />}
+                {isCancelling ? "Cancelling..." : "Cancel Booking"}
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>

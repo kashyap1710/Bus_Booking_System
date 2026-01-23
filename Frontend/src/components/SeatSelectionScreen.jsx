@@ -1,4 +1,5 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import RouteIndicator from "./RouteIndicator";
 
@@ -11,13 +12,13 @@ export default function SeatSelectionScreen({
   const [seats, setSeats] = useState([
     { id: "U1", label: "1 UB", status: "available" },
     { id: "U4", label: "4 UB", status: "available" },
-    { id: "U7", label: "7 UB", status: "booked", gender: "Female" },
+    { id: "U7", label: "7 UB", status: "available" },
     { id: "U10", label: "10 UB", status: "available" },
     { id: "U13", label: "13 UB", status: "available" },
 
     { id: "U2", label: "2 UB", status: "available" },
     { id: "U5", label: "5 UB", status: "available" },
-    { id: "U8", label: "8 UB", status: "booked", gender: "Male" },
+    { id: "U8", label: "8 UB", status: "available" },
     { id: "U11", label: "11 UB", status: "available" },
     { id: "U14", label: "14 UB", status: "available" },
 
@@ -36,15 +37,47 @@ export default function SeatSelectionScreen({
     { id: "L2", label: "2 LB", status: "available" },
     { id: "L5", label: "5 LB", status: "available" },
     { id: "L8", label: "8 LB", status: "available" },
-    { id: "L11", label: "11 LB", status: "booked", gender: "Female" },
+    { id: "L11", label: "11 LB", status: "available" },
     { id: "L14", label: "14 LB", status: "available" },
 
     { id: "L3", label: "3 LB", status: "available" },
     { id: "L6", label: "6 LB", status: "available" },
     { id: "L9", label: "9 LB", status: "available" },
     { id: "L12", label: "12 LB", status: "available" },
-    { id: "L15", label: "15 LB", status: "booked", gender: "Male" },
+    { id: "L15", label: "15 LB", status: "available" },
   ]);
+
+  useEffect(() => {
+    const fetchAvailability = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/availability", {
+          params: {
+            journeyDate: bookingData.date,
+            fromIndex: bookingData.fromStopIndex,
+            toIndex: bookingData.toStopIndex,
+          },
+        });
+
+        const availableSeats = response.data; // Array of seat objects { seatNumber, available, ... }
+        
+        setSeats((prevSeats) =>
+          prevSeats.map((seat) => {
+            const apiSeat = availableSeats.find((s) => s.seatNumber === seat.label);
+            const isBooked = apiSeat ? !apiSeat.available : false;
+            
+            // Should not overwrite 'selected' if still valid, unless it became booked
+            if (isBooked) return { ...seat, status: "booked", gender: apiSeat.gender }; // Use API gender
+            if (seat.status === "selected") return seat;
+            return { ...seat, status: "available" };
+          })
+        );
+      } catch (error) {
+        console.error("Failed to fetch availability", error);
+      }
+    };
+
+    fetchAvailability();
+  }, [bookingData.date, bookingData.fromStopIndex, bookingData.toStopIndex]);
 
   const handleSeatClick = (id) => {
     setSeats((prev) => {
