@@ -16,13 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Debug Middleware to log incoming requests
-app.use((req, res, next) => {
-  console.log(`[${req.method}] ${req.url}`);
-  console.log("Headers:", JSON.stringify(req.headers, null, 2));
-  console.log("Body:", req.body);
-  next();
-});
+// Debug Middleware to log incoming
 app.use("/api/availability", availabilityRoutes);
 
 app.use("/api", bookingRoutes);
@@ -43,5 +37,4 @@ app.get("/db-test", async (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
 });

@@ -9,8 +9,6 @@ const router = express.Router();
 // POST /api/bookings
 router.post("/bookings", async (req, res) => {
   try {
-    console.log("Booking Request Body:", req.body); // Log explicitly inside the route
-
     if (!req.body) {
       return res.status(400).json({ message: "Request body is missing. Ensure Content-Type is application/json" });
     }

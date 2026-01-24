@@ -59,3 +59,16 @@ This document lists the critical test cases to ensure the system is bug-free and
 3.3. Input Constraints
 - [ ] TC021: Passenger Details. -> Age field should not allow negative numbers.
 - [ ] TC022: Search Input. -> "From" and "To" cannot be the same station.
+
+
+================================================================================
+4. DATA SCIENCE & PREDICTION (Part 4)
+================================================================================
+
+4.1. Risk Model Verification
+- [ ] TC023: High Risk Scenario (Weekend OR Last Minute).
+  - Search for "Today" (if Friday/Sat/Sun).
+  - Expected: "🔥 High Risk (80%+)" Badge appears on Seat Selection Screen.
+- [ ] TC024: Safe Scenario (Weekday + 30 Days advance).
+  - Search for a Wednesday next month.
+  - Expected: "🌱 Safe (<50%)" Badge appearing.

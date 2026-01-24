@@ -1,0 +1,222 @@
+Sleeper Bus Booking System
+________________________________________
+1. SYSTEM OVERVIEW
+The Sleeper Bus Booking System is a transactional, instant-booking platform operating on a fixed route (Ahmedabad → Mumbai) with multiple intermediate stations.
+The system is designed around three core principles:
+1.	Segment-based seat availability
+2.	Atomic booking & cancellation lifecycle
+3.	Predictive intelligence to influence user decisions
+There is no waitlist concept. A seat is either:
+•	Available
+•	Or blocked for a specific route segment on a specific date
+________________________________________
+2. DATABASE DESIGN — FIELD-BY-FIELD & WHY IT EXISTS
+The database is normalized to separate identity, transactions, availability, and analytics.
+________________________________________
+2.1 customers — User Identity Anchor
+Purpose:
+Stores a persistent identity for users across multiple bookings.
+Key Design Choice:
+Email is the primary identifier.
+Why email?
+•	Globally unique
+•	Stable over time
+•	Industry standard for booking platforms
+Lifecycle:
+•	Created → on first booking attempt
+•	Reused → for all future bookings
+•	Never deleted → preserves transaction history
+This table allows long-term analytics like repeat users and booking behavior.
+________________________________________
+2.2 stations — Route Intelligence
+Purpose:
+Maps cities to numeric indices.
+Why numeric indices?
+•	Enables distance calculation
+•	Enables segment overlap logic
+•	Simplifies analytics and prediction features
+Example:
+Ahmedabad = 0
+Surat = 3
+Mumbai = 6
+Distance = toIndex - fromIndex
+________________________________________
+2.3 seats — Static Physical Resources
+Purpose:
+Defines physical seats independent of bookings.
+Seats are never booked directly.
+Availability is derived, not stored.
+Why this matters:
+•	Prevents stale state
+•	Avoids race conditions
+•	Mirrors real reservation systems
+________________________________________
+2.4 bookings — Transaction Header
+Each row represents one completed order / payment.
+Key Fields & Why They Exist:
+Field	Purpose
+customer_id	Ownership
+journey_date	Date-specific booking
+from_station_index	Segment start
+to_station_index	Segment end
+booking_status	CONFIRMED / CANCELLED
+total_amount	Invoice amount
+cancelled_at	Audit trail
+bookingLeadTime	ML feature
+predictionScore	ML feedback
+created_at	Booking timestamp
+Important Rule:
+Bookings are never deleted — only state changes.
+________________________________________
+2.5 seat_segments — ⭐ CORE AVAILABILITY ENGINE
+This table is the heart of the system.
+Each row means:
+“Seat X is blocked from station A to station B on date D”
+Why this design is critical:
+•	Enables partial-route booking
+•	Prevents unnecessary seat blocking
+•	Scales naturally for multi-stop routes
+Overlap logic (industry standard):
+existing.fromIndex < requested.toIndex
+AND
+existing.toIndex > requested.fromIndex
+If this condition is true → seat is unavailable.
+Lifecycle:
+•	INSERT → on booking
+•	DELETE → on cancellation
+•	READ → during availability search
+________________________________________
+2.6 booking_meals — Optional Add-ons
+Meals are:
+•	Independent of seat blocking
+•	Stored per booking
+•	Never auto-deleted (even on cancellation)
+This preserves order history and future analytics.
+________________________________________
+3. CORE APPLICATION FLOWS
+________________________________________
+3.1 Availability Search Flow
+API:
+GET /api/availability
+Steps:
+1.	Fetch all seats
+2.	Fetch conflicting seat_segments for date + overlap
+3.	Map availability in memory
+4.	Return enriched seat objects:
+o	available
+o	gender
+o	passengerName
+o	bookingId
+Why this is efficient:
+•	No joins
+•	Minimal DB calls
+•	O(n) in-memory processing
+________________________________________
+3.2 Booking Creation Flow
+API:
+POST /api/bookings
+Execution order:
+1.	Resolve customer by email (insert if new)
+2.	Create booking row
+3.	Insert seat_segments (one per seat)
+4.	Insert booking_meals (optional)
+5.	Trigger confirmation email (async)
+This ensures transactional consistency.
+________________________________________
+3.3 Cancellation Flow
+API:
+POST /api/bookings/cancel
+Actions:
+1.	Update booking status → CANCELLED
+2.	DELETE seat_segments for that booking
+Why DELETE is correct:
+•	Availability is derived from existence
+•	Removing rows instantly frees seats
+•	Booking history remains intact
+________________________________________
+4. EMAIL NOTIFICATION SYSTEM
+File: email.service.js
+Technology:
+•	Nodemailer
+•	Gmail SMTP
+•	App password authentication
+Design Philosophy:
+•	Email is a side effect, not a dependency
+Why async sending matters:
+sendBookingConfirmation(...).catch(...)
+•	Booking succeeds even if email fails
+•	UI remains fast
+•	System is resilient
+Email content:
+•	Inline HTML (email-client safe)
+•	Dynamic passenger, seat, meal rendering
+•	Conditional sections
+________________________________________
+5. DATA SCIENCE & PREDICTION (PART 4 — NEW)
+________________________________________
+5.1 Why “Sell-Out Risk” (Not Confirmation Probability)
+This is an instant booking system, not waitlist-based.
+So instead of:
+“Will my ticket get confirmed?”
+We predict:
+“Will this bus sell out if I wait?”
+Interpretation:
+•	85% sell-out risk = only 15% chance seat survives
+•	Encourages timely booking
+________________________________________
+5.2 Prediction Model Design
+File: predictionModel.js
+Type:
+Rule-based heuristic (mock ML model)
+Chosen because:
+•	No real historical data yet
+•	Explainable
+•	Evaluation-friendly
+•	ML-ready architecture
+________________________________________
+5.3 Prediction Features (WHY EACH EXISTS)
+Feature 1: bookingLeadTime (Time Decay)
+•	Panic increases closer to travel date
+•	Last-minute demand spikes
+Feature 2: Seasonality
+•	Weekend demand is structurally higher
+Feature 3: Scarcity (Occupancy)
+•	Social proof effect
+•	Fewer seats → faster sell-out
+________________________________________
+5.4 Prediction Output
+{
+  "score": 82,
+  "label": "High Risk",
+  "features": {
+    "daysLeft": 2,
+    "isWeekend": true,
+    "occupancyRate": "66.7%"
+  }
+}
+This ensures:
+•	Transparency
+•	Debuggability
+•	UI explainability
+________________________________________
+6. MOCK TRAINING DATASET
+File: mock_training_dataset.csv
+Purpose:
+•	Demonstrates ML thinking
+•	Shows correlation awareness
+•	Proves system is ML-ready
+~1200 rows simulate 1 year of bookings.
+________________________________________
+7. ML FEEDBACK LOOP (ADVANCED DESIGN)
+Two stored fields enable learning:
+bookingLeadTime
+→ When the user committed
+predictionScore
+→ What the model believed
+Feedback loop:
+1.	Model predicts risk
+2.	Score stored in booking
+3.	Reality happens
+4.	Offline analysis compares prediction vs outcome
+5.	Weights adjusted
+

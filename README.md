@@ -41,6 +41,7 @@ Run the application locally to test the User Flow: `http://localhost:5173`.
 ## 🧪 Quality Assurance (Part 1)
 
 - [Test Cases & QA Document](./Test_Cases.txt)
+- [System Architecture Documentation](./Sleeper_Bus_System_Documentation.txt)
 
 ## 🧠 Data Science (Part 4)
 
