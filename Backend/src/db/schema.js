@@ -14,11 +14,8 @@ import {
 ======================= */
 export const customers = pgTable("customers", {
   id: serial("id").primaryKey(),
-  fullName: varchar("full_name", { length: 100 }).notNull(),
   email: varchar("email", { length: 150 }).unique().notNull(),
-  gender: varchar("gender", { length: 10 }),
   isActive: boolean("is_active").default(true),
-  lastBookingDate: timestamp("last_booking_date"),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 });
@@ -69,10 +66,8 @@ export const bookings = pgTable("bookings", {
   toStationIndex: integer("to_station_index").notNull(),
 
   bookingStatus: varchar("booking_status", { length: 30 }).notNull(),
-  seatStatus: varchar("seat_status", { length: 30 }).notNull(),
-
+  
   cancelledAt: timestamp("cancelled_at"),
-  confirmationTime: timestamp("confirmation_time"),
 
   totalAmount: numeric("total_amount", { precision: 10, scale: 2 }).notNull(),
 
@@ -101,6 +96,7 @@ export const seatSegments = pgTable("seat_segments", {
   fromIndex: integer("from_index").notNull(),
   toIndex: integer("to_index").notNull(),
   gender: varchar("gender", { length: 10 }), // "Male" or "Female"
+  passengerName: varchar("passenger_name", { length: 100 }),
 });
 
 /* =======================

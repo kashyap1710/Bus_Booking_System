@@ -1,0 +1,61 @@
+Sleeper Bus Booking System - Quality Assurance & Test Cases
+================================================================================
+Part 1: Product & Quality Assurance
+
+This document lists the critical test cases to ensure the system is bug-free and user-friendly.
+
+================================================================================
+1. FUNCTIONAL TEST CASES (Core Logic)
+================================================================================
+
+1.1. Search Functionality
+- [ ] TC001: User searches with valid data (Ahmedabad -> Mumbai, Future Date). -> Should show available seats.
+- [ ] TC002: User searches for a past date. -> Should likely block or show empty? (Current: Allowed, but logically invalid).
+- [ ] TC003: User searches "Mumbai -> Ahmedabad" (Reverse Route). -> Should show correct availability (if bidirectional) or block.
+- [ ] TC004: User enters 0 or 7 passengers. -> Input should auto-correct to 1 or 6.
+
+1.2. Seat Selection
+- [ ] TC005: Select a Seat (e.g., U1). -> Visual indicator changes to Green.
+- [ ] TC006: Try to select more seats than "Number of Passengers". -> Should prevent selection.
+- [ ] TC007: Try to select an already Gray (Booked) seat. -> Should be unclickable.
+- [ ] TC008: Verify "Ghost Seat" Fix. -> Ensure Seat 13, 14, 15 appear and work (Upper & Lower).
+
+1.3. Booking Flow
+- [ ] TC009: Complete flow with 1 Passenger + Veg Meal. -> DB `bookings` count increases by 1.
+- [ ] TC010: Complete flow with 2 Passengers (Mixed Gender). -> DB `seat_segments` count increases by 2.
+- [ ] TC011: Verify Email. -> Application should not crash if Email Service fails (simulated network error).
+
+1.4. Cancellation
+- [ ] TC012: Cancel a booked seat. -> Status invalidates in DB, Seat becomes selectable again in Search.
+
+================================================================================
+2. EDGE CASES (Stress Testing)
+================================================================================
+
+2.1. Concurrency
+- [ ] TC013: Two users try to book Seat L1 at the exact same second.
+  - Expected: Database transaction ensures only ONE succeeds. Second user gets error.
+
+2.2. Partial Routes
+- [ ] TC014: User A books Ahmedabad -> Surat (Seats 0-3).
+- [ ] TC015: User B searches Surat -> Mumbai (Seats 3-6).
+  - Expected: The SAME seat booked by User A should be AVAILABLE for User B.
+
+2.3. Data Boundaries
+- [ ] TC016: Passenger Name with emojis or 100+ chars. -> DB should truncate or handle gracefully.
+- [ ] TC017: Booking with 0 meals. -> `booking_meals` table should remain empty for that ID.
+
+================================================================================
+3. UI/UX VALIDATION
+================================================================================
+
+3.1. Visual Feedback
+- [ ] TC018: Seat Map Colors. -> Male bookings MUST be Blue. Female bookings MUST be Pink. My Selection MUST be Green.
+- [ ] TC019: Hover States. -> Hovering a booked seat shows the Passenger Name? (Feature check).
+
+3.2. Responsive Design
+- [ ] TC020: Mobile View. -> Seat grid should stack or scroll. It should not break layout on 375px width.
+
+3.3. Input Constraints
+- [ ] TC021: Passenger Details. -> Age field should not allow negative numbers.
+- [ ] TC022: Search Input. -> "From" and "To" cannot be the same station.

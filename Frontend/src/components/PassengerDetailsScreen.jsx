@@ -54,6 +54,7 @@ export default function PassengerDetailsScreen({
         toIndex: bookingData.toStopIndex,
         seatIds: bookingData.selectedSeats,
         passengerGenders: bookingData.passengerGenders, // Send genders
+        passengerNames: bookingData.passengerNames, // Send names
         meals: [
           ...(bookingData.meals.veg > 0 ? [{ mealId: 1, qty: bookingData.meals.veg }] : []),
           ...(bookingData.meals.nonVeg > 0 ? [{ mealId: 2, qty: bookingData.meals.nonVeg }] : [])
@@ -270,13 +271,7 @@ export default function PassengerDetailsScreen({
                 ₹{seatPrice}
               </span>
             </div>
-            {/* Email Summary */}
-            <div className="mt-4 pt-4 border-t border-gray-700">
-              <p className="text-gray-300 text-sm">
-                <span className="text-gray-400">Email:</span>{" "}
-                {bookingData.email}
-              </p>
-            </div>
+
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import SeatSelectionScreen from "./components/SeatSelectionScreen";
 import MealSelectionScreen from "./components/MealSelectionScreen";
 import PassengerDetailsScreen from "./components/PassengerDetailsScreen.jsx";
 import BookingConfirmationScreen from "./components/BookingConfirmationScreen";
+import CancelTicketScreen from "./components/CancelTicketScreen";
 import Toast from "./components/Toast";
 
 /* ---------------- BUS STOPS ---------------- */
@@ -118,6 +119,7 @@ export default function App() {
           bookingData={bookingData}
           updateBookingData={updateBookingData}
           onNext={goToNextScreen}
+          onCancelTicket={() => setCurrentScreen(6)}
         />
       )}
 
@@ -153,6 +155,13 @@ export default function App() {
         <BookingConfirmationScreen
           bookingData={bookingData}
           onHome={goHome}
+        />
+      )}
+
+      {currentScreen === 6 && (
+        <CancelTicketScreen
+          bookingData={bookingData}
+          onBack={goHome}
         />
       )}
     </div>

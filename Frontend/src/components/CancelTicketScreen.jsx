@@ -3,10 +3,8 @@ import { useEffect, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import RouteIndicator from "./RouteIndicator";
 
-export default function SeatSelectionScreen({
+export default function CancelTicketScreen({
   bookingData,
-  updateBookingData,
-  onNext,
   onBack,
 }) {
   const [seats, setSeats] = useState([
@@ -47,7 +45,7 @@ export default function SeatSelectionScreen({
     { id: "L15", label: "15 LB", status: "available" },
   ]);
 
-  const [prediction, setPrediction] = useState(null);
+  const [lastUpdate, setLastUpdate] = useState(Date.now());
 
   useEffect(() => {
     const fetchAvailability = async () => {
@@ -60,18 +58,13 @@ export default function SeatSelectionScreen({
           },
         });
 
-        // Backend returns { seats: [...], prediction: { score, label } }
-        const availableSeats = response.data.seats || response.data; 
-        const predictionData = response.data.prediction;
-
-        if (predictionData) setPrediction(predictionData);
+        const availableSeats = response.data;
         
         setSeats((prevSeats) =>
           prevSeats.map((seat) => {
             const apiSeat = availableSeats.find((s) => s.seatNumber === seat.label);
             const isBooked = apiSeat ? !apiSeat.available : false;
             
-            // Should not overwrite 'selected' if still valid, unless it became booked
             if (isBooked) return { 
               ...seat, 
               status: "booked", 
@@ -79,7 +72,6 @@ export default function SeatSelectionScreen({
               passengerName: apiSeat.passengerName, 
               bookingId: apiSeat.bookingId 
             }; 
-            if (seat.status === "selected") return seat;
             return { ...seat, status: "available" };
           })
         );
@@ -89,42 +81,31 @@ export default function SeatSelectionScreen({
     };
 
     fetchAvailability();
-  }, [bookingData.date, bookingData.fromStopIndex, bookingData.toStopIndex]);
+  }, [bookingData.date, bookingData.fromStopIndex, bookingData.toStopIndex, lastUpdate]);
 
-  const handleSeatClick = (id) => {
-    setSeats((prev) => {
-      const seat = prev.find((s) => s.id === id);
-      if (!seat || seat.status === "booked") return prev;
-
-      const selectedCount = prev.filter((s) => s.status === "selected").length;
-      const isSelected = seat.status === "selected";
-
-      if (!isSelected && selectedCount >= bookingData.passengers) return prev;
-
-      const updated = prev.map((s) =>
-        s.id === id
-          ? { ...s, status: isSelected ? "available" : "selected" }
-          : s,
-      );
-
-      updateBookingData({
-        selectedSeats: updated
-          .filter((s) => s.status === "selected")
-          .map((s) => s.label),
-      });
-
-      return updated;
-    });
+  // Handle Cancellation
+  const handleCancelSeat = async (seat) => {
+    if (!seat.bookingId) return;
+    
+    // Using native confirm for simplicity
+    if (confirm(`Are you sure you want to cancel the ticket for ${seat.passengerName || "this passenger"}?`)) {
+      try {
+        await axios.post("http://localhost:5000/api/bookings/cancel", { bookingId: seat.bookingId });
+        alert("Booking cancelled successfully!");
+        setLastUpdate(Date.now()); // Re-fetch data
+      } catch (error) {
+        console.error("Cancellation failed", error);
+        alert("Failed to cancel booking.");
+      }
+    }
   };
 
   const seatClass = (seat) => {
-    if (seat.status === "selected")
-      return "bg-green-500 border-green-600 text-white";
     if (seat.status === "booked")
       return seat.gender === "Female"
-        ? "bg-pink-500 border-pink-600 text-white cursor-not-allowed"
-        : "bg-blue-500 border-blue-600 text-white cursor-not-allowed";
-    return "bg-gray-800 border-gray-600 text-gray-300 hover:bg-gray-700";
+        ? "bg-pink-500 border-pink-600 text-white cursor-pointer hover:bg-pink-600"
+        : "bg-blue-500 border-blue-600 text-white cursor-pointer hover:bg-blue-600";
+    return "bg-gray-800 border-gray-600 text-gray-500 cursor-not-allowed opacity-50";
   };
 
   const renderSeat = (seat) => {
@@ -134,22 +115,25 @@ export default function SeatSelectionScreen({
       <div className="relative group">
         <button
           key={seat.id}
-          onClick={() => !isBooked && handleSeatClick(seat.id)}
-          disabled={isBooked}
+          onClick={() => isBooked && handleCancelSeat(seat)}
+          disabled={!isBooked}
           className={`w-14 h-24 rounded-xl border-2 text-xs font-medium flex flex-col items-center justify-center relative ${seatClass(
             seat
           )}`}
         >
           <span>{seat.label}</span>
+          
+          {isBooked && (
+            <span className="text-[10px] mt-1 truncate w-full px-1 opacity-80">
+              {seat.passengerName ? seat.passengerName.split(" ")[0] : "Booked"}
+            </span>
+          )}
         </button>
 
-        {/* Show Name on Booked Seats */}
+        {/* Hover Tooltip for Full Name */}
         {isBooked && seat.passengerName && (
-          <div className="absolute bottom-full mb-2 hidden group-hover:flex flex-col items-center transition-all z-10 w-max bg-gray-900 text-white text-xs p-2 rounded shadow-lg border border-gray-700 pointer-events-none">
-            <span className="font-bold">{seat.passengerName}</span>
-            <span className="text-[10px] text-gray-400">({seat.gender})</span>
-            {/* Tooltip Arrow */}
-            <div className="w-2 h-2 bg-gray-900 border-r border-b border-gray-700 transform rotate-45 absolute -bottom-1"></div>
+          <div className="absolute bottom-full mb-1 left-1/2 -translate-x-1/2 text-xs bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-10 pointer-events-none">
+            {seat.passengerName}
           </div>
         )}
       </div>
@@ -178,9 +162,9 @@ export default function SeatSelectionScreen({
           </button>
 
           <div className="text-center flex-1">
-            <h1 className="text-3xl font-semibold text-white">Select Your Sleeper Seat</h1>
-            <p className="text-gray-400 mt-1">
-              {bookingData.from} → {bookingData.to}
+            <h1 className="text-3xl font-semibold text-white">Cancel Ticket</h1>
+            <p className="text-red-400 mt-1 text-sm">
+              Tap a booked seat to cancel it
             </p>
             <div className="mt-4">
               <RouteIndicator
@@ -188,21 +172,6 @@ export default function SeatSelectionScreen({
                 toIndex={bookingData.toStopIndex}
               />
             </div>
-            
-            {/* 🔴 PREDICTION BADGE */}
-            {prediction && (
-              <div className={`mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border ${
-                prediction.score > 80 ? "bg-red-500/10 border-red-500 text-red-500" :
-                prediction.score > 50 ? "bg-amber-500/10 border-amber-500 text-amber-500" :
-                "bg-green-500/10 border-green-500 text-green-500"
-              }`}>
-                {prediction.score > 80 ? "🔥" : prediction.score > 50 ? "⚠️" : "🌱"}
-                <span className="text-sm font-medium">
-                  {prediction.label} ({prediction.score}% Sell-Out Chance)
-                </span>
-              </div>
-            )}
-            
           </div>
 
           <div className="w-10" />
@@ -212,8 +181,7 @@ export default function SeatSelectionScreen({
         <div className="bg-gray-800 rounded-2xl shadow-lg shadow-black/30 p-8">
           {/* Legend */}
           <div className="flex justify-center gap-6 text-sm mb-6 flex-wrap">
-            <Legend color="bg-gray-700 border-gray-500" label="Available" />
-            <Legend color="bg-green-500" label="Selected" />
+            <Legend color="bg-gray-700 border-gray-500 opacity-50" label="Empty" />
             <Legend color="bg-blue-500" label="Booked (Male)" />
             <Legend color="bg-pink-500" label="Booked (Female)" />
           </div>
@@ -248,33 +216,11 @@ export default function SeatSelectionScreen({
               />
             </div>
           </div>
-
-          {bookingData.selectedSeats.length > 0 && (
-            <div className="mt-6 bg-blue-900/20 p-4 rounded-xl text-center text-white">
-              Selected Seats:{" "}
-              <span className="font-medium text-blue-400">
-                {bookingData.selectedSeats.join(", ")}
-              </span>
-            </div>
-          )}
-
-          <button
-            onClick={onNext}
-            disabled={
-              bookingData.selectedSeats.length !== bookingData.passengers
-            }
-            className="w-full mt-6 py-4 rounded-xl bg-blue-600 text-white text-lg font-medium
-                       hover:bg-blue-700 disabled:bg-gray-700 disabled:text-gray-500 disabled:cursor-not-allowed"
-          >
-            Continue
-          </button>
         </div>
       </div>
     </div>
   );
 }
-
-/* ---------- Helpers ---------- */
 
 function Legend({ color, label }) {
   return (

@@ -1,7 +1,7 @@
 import express from "express";
 import { db } from "../db/index.js";
-import { bookings, seatSegments, bookingMeals, seats, customers } from "../db/schema.js";
-import { inArray, eq, and, lt, gt } from "drizzle-orm";
+import { bookings, seatSegments, bookingMeals, seats, customers, stations, meals as mealsTable } from "../db/schema.js";
+import { inArray, eq, and, lt, gt, sql } from "drizzle-orm";
 import { sendBookingConfirmation } from "../services/email.service.js";
 
 const router = express.Router();
@@ -22,6 +22,7 @@ router.post("/bookings", async (req, res) => {
       toIndex,
       seatIds,
       passengerGenders,
+      passengerNames,
       meals,
       totalAmount
     } = req.body; // destructure AFTER check
@@ -63,9 +64,6 @@ router.post("/bookings", async (req, res) => {
     if (!customer) {
       const [newCustomer] = await db.insert(customers).values({
         email,
-        fullName: "Guest User", // improved later
-        // Phone is removed from schema
-        gender: "Male" // Default
       }).returning();
       customer = newCustomer;
     }
@@ -76,7 +74,6 @@ router.post("/bookings", async (req, res) => {
       fromStationIndex: fromIndex,
       toStationIndex: toIndex,
       bookingStatus: "CONFIRMED",
-      seatStatus: "BOOKED",
       totalAmount
     }).returning();
 
@@ -95,7 +92,8 @@ router.post("/bookings", async (req, res) => {
           journeyDate,
           fromIndex,
           toIndex,
-          gender // Store gender
+          gender, // Store gender
+          passengerName: passengerNames ? passengerNames[i] : null // Store name
         });
       }
     }
@@ -113,12 +111,39 @@ router.post("/bookings", async (req, res) => {
     // 📧 Send Email Notification (Non-blocking)
     try {
       if (email) {
+        // Fetch Station Names
+        const fromStationData = await db.select({ name: stations.cityName }).from(stations).where(eq(stations.stationIndex, fromIndex)).limit(1);
+        const toStationData = await db.select({ name: stations.cityName }).from(stations).where(eq(stations.stationIndex, toIndex)).limit(1);
+
+        const fromStation = fromStationData[0]?.name || "Unknown";
+        const toStation = toStationData[0]?.name || "Unknown";
+
+        // Fetch Meal Names if meals are selected
+        let bookedMeals = [];
+        if (meals && meals.length > 0) {
+          const mealIds = meals.map(m => m.mealId);
+          const mealRecords = await db.select().from(mealsTable).where(inArray(mealsTable.id, mealIds));
+          
+          bookedMeals = meals.map(m => {
+            const mealInfo = mealRecords.find(r => r.id === m.mealId);
+            return {
+              name: mealInfo ? mealInfo.name : "Unknown Meal",
+              quantity: m.qty,
+              price: mealInfo ? mealInfo.price : 0
+            };
+          });
+        }
+
         // We don't await this so it runs in background
         sendBookingConfirmation(email, {
           bookingId: booking.id,
           journeyDate,
           seats: seatIds,
-          totalAmount
+          totalAmount,
+          fromStation,
+          toStation,
+          meals: bookedMeals,
+          passengerNames
         }).catch(err => console.error("Email sending failed asynchronously:", err));
       }
     } catch (emailError) {
@@ -146,7 +171,6 @@ router.post("/bookings/cancel", async (req, res) => {
     await db.update(bookings)
       .set({ 
         bookingStatus: "CANCELLED",
-        seatStatus: "CANCELLED",
         cancelledAt: new Date()
       })
       .where(eq(bookings.id, bookingId));

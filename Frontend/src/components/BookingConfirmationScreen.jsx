@@ -216,16 +216,7 @@ export default function BookingConfirmationScreen({ bookingData, onHome }) {
               Back to Home
             </button>
 
-            {!isCancelled && (
-              <button
-                onClick={handleCancel}
-                disabled={isCancelling}
-                className="w-full bg-red-900/20 text-red-500 py-4 rounded-xl text-lg font-medium hover:bg-red-900/30 flex items-center justify-center gap-2 border border-red-900/50"
-              >
-                {isCancelling ? <Loader2 className="animate-spin" /> : <XCircle size={20} />}
-                {isCancelling ? "Cancelling..." : "Cancel Booking"}
-              </button>
-            )}
+
           </div>
         </div>
       </div>

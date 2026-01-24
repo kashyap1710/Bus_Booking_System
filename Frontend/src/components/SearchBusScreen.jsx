@@ -6,6 +6,7 @@ export default function SearchBusScreen({
   bookingData,
   updateBookingData,
   onNext,
+  onCancelTicket
 }) {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -17,7 +18,6 @@ export default function SearchBusScreen({
       bookingData.fromStopIndex < bookingData.toStopIndex
     ) {
       setIsLoading(true);
-      // Simulate API call
       setTimeout(() => {
         updateBookingData({
           selectedSeats: [],
@@ -48,7 +48,6 @@ export default function SearchBusScreen({
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-900 px-4">
-      {/* Header */}
       <div className="text-center mt-10 mb-10">
         <h1 className="text-4xl font-semibold mb-2">
           Sleeper Bus Booking
@@ -86,7 +85,6 @@ export default function SearchBusScreen({
           </select>
         </div>
 
-        {/* To */}
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-2">
             To
@@ -109,7 +107,6 @@ export default function SearchBusScreen({
           </select>
         </div>
 
-        {/* Journey Date */}
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-2">
             Journey Date
@@ -132,30 +129,42 @@ export default function SearchBusScreen({
           </div>
         </div>
 
-        {/* Passengers */}
         <div>
           <label className="block text-sm font-medium text-gray-300 mb-2">
             Number of Passengers (Max 6)
           </label>
           <input
-            type="number"
-            min={1}
-            max={6}
+            type="text"
+            inputMode="numeric"
             value={bookingData.passengers}
-            onChange={(e) =>
-              updateBookingData({
-                passengers: Math.min(
-                  6,
-                  Math.max(1, parseInt(e.target.value) || 1)
-                ),
-              })
-            }
+            onChange={(e) => {
+              const val = e.target.value;
+              // Allow only legitimate digits
+              if (val === "") {
+                updateBookingData({ passengers: "" });
+                return;
+              }
+              // Regex to ensure only numbers are typed
+              if (!/^\d+$/.test(val)) return;
+
+              let num = parseInt(val);
+              
+              // If number > 6, ignore the last keystroke (don't update state)
+              if (num > 6) return;
+              if (num < 1) num = 1;
+
+              updateBookingData({ passengers: num });
+            }}
+            onBlur={() => {
+              if (!bookingData.passengers) {
+                updateBookingData({ passengers: 1 });
+              }
+            }}
             className="w-full rounded-xl border border-gray-600 bg-gray-700 px-4 py-3 text-white
                        focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
-        {/* Fare Box */}
         <div className="bg-blue-900/20 border border-blue-800 rounded-xl p-4 flex justify-between items-center">
           <div>
             <p className="text-sm font-medium text-gray-300">
@@ -167,7 +176,7 @@ export default function SearchBusScreen({
                 bookingData.fromStopIndex,
                 bookingData.toStopIndex
               )}{" "}
-              × {bookingData.passengers} passengers)
+              × {parseInt(bookingData.passengers) || 0} passengers)
             </p>
           </div>
 
@@ -176,11 +185,10 @@ export default function SearchBusScreen({
             {calculateFare(
               bookingData.fromStopIndex,
               bookingData.toStopIndex
-            ) * bookingData.passengers}
+            ) * (parseInt(bookingData.passengers) || 0)}
           </div>
         </div>
 
-        {/* Button */}
         <button
           type="submit"
           disabled={isLoading}
@@ -195,6 +203,16 @@ export default function SearchBusScreen({
             "Search Bus"
           )}
         </button>
+
+        <div className="pt-2 text-center">
+          <button
+            type="button"
+            onClick={onCancelTicket}
+            className="text-red-400 text-sm hover:underline hover:text-red-300 transition"
+          >
+            Manage / Cancel Bookings
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -1,0 +1,1201 @@
+Journey_Date,Day_Type,Days_Before_Travel,Booked_Seats,Total_Seats,Occupancy_Percent,Outcome_Label
+2025-03-26,Weekday,40,0,30,0%,Safe
+2025-05-26,Weekday,12,0,30,0%,Safe
+2025-12-05,Friday,39,24,30,80%,Medium Risk
+2025-09-25,Weekday,20,8,30,27%,Safe
+2025-08-06,Weekday,19,2,30,7%,Safe
+2025-08-26,Weekday,32,9,30,30%,Safe
+2025-04-08,Weekday,10,4,30,13%,Safe
+2025-06-08,Sunday,42,18,30,60%,Medium Risk
+2025-01-05,Sunday,31,14,30,47%,Medium Risk
+2025-10-25,Saturday,44,19,30,63%,Medium Risk
+2025-07-01,Weekday,32,3,30,10%,Safe
+2025-07-07,Weekday,33,3,30,10%,Safe
+2025-08-05,Weekday,38,1,30,3%,Safe
+2025-06-09,Weekday,29,2,30,7%,Safe
+2025-10-17,Friday,6,22,30,73%,High Risk
+2025-01-11,Saturday,25,8,30,27%,Safe
+2025-01-20,Weekday,33,10,30,33%,Safe
+2025-07-09,Weekday,28,5,30,17%,Safe
+2025-12-22,Weekday,24,2,30,7%,Safe
+2025-06-10,Weekday,6,15,30,50%,Medium Risk
+2025-12-01,Weekday,36,8,30,27%,Safe
+2025-11-05,Weekday,33,0,30,0%,Safe
+2025-12-02,Weekday,9,2,30,7%,Safe
+2025-01-14,Weekday,44,0,30,0%,Safe
+2025-05-16,Friday,11,21,30,70%,Medium Risk
+2025-01-02,Weekday,6,15,30,50%,Medium Risk
+2025-12-27,Saturday,31,18,30,60%,Medium Risk
+2025-02-16,Sunday,6,30,30,100%,Sell Out Likely
+2025-10-10,Friday,25,9,30,30%,Safe
+2025-01-07,Weekday,18,5,30,17%,Safe
+2025-06-04,Weekday,23,8,30,27%,Safe
+2025-04-07,Weekday,1,18,30,60%,Sell Out Likely
+2025-01-21,Weekday,35,4,30,13%,Safe
+2025-05-01,Weekday,2,9,30,30%,Medium Risk
+2025-08-20,Weekday,45,0,30,0%,Safe
+2025-03-09,Sunday,22,16,30,53%,Medium Risk
+2025-07-17,Weekday,5,8,30,27%,Safe
+2025-10-05,Sunday,27,14,30,47%,Medium Risk
+2025-11-17,Weekday,40,7,30,23%,Safe
+2025-11-26,Weekday,6,12,30,40%,Safe
+2025-08-21,Weekday,3,14,30,47%,Medium Risk
+2025-09-25,Weekday,11,5,30,17%,Safe
+2025-10-28,Weekday,30,6,30,20%,Safe
+2025-11-01,Saturday,8,16,30,53%,Medium Risk
+2025-03-23,Sunday,12,17,30,57%,Medium Risk
+2025-10-07,Weekday,36,0,30,0%,Safe
+2025-06-13,Friday,11,8,30,27%,Safe
+2025-09-07,Sunday,38,9,30,30%,Safe
+2025-06-11,Weekday,18,6,30,20%,Safe
+2025-06-17,Weekday,27,8,30,27%,Safe
+2025-07-03,Weekday,41,0,30,0%,Safe
+2025-09-22,Weekday,1,15,30,50%,High Risk
+2025-10-25,Saturday,2,21,30,70%,Sell Out Likely
+2025-04-17,Weekday,36,7,30,23%,Safe
+2025-07-09,Weekday,15,3,30,10%,Safe
+2025-02-26,Weekday,37,3,30,10%,Safe
+2025-04-08,Weekday,36,10,30,33%,Safe
+2025-05-14,Weekday,4,13,30,43%,Safe
+2025-10-29,Weekday,35,2,30,7%,Safe
+2025-04-21,Weekday,3,8,30,27%,Medium Risk
+2025-02-24,Weekday,5,13,30,43%,Safe
+2025-05-18,Sunday,17,14,30,47%,Medium Risk
+2025-10-23,Weekday,10,8,30,27%,Safe
+2025-12-14,Sunday,0,30,30,100%,Sell Out Likely
+2025-01-21,Weekday,15,6,30,20%,Safe
+2025-11-27,Weekday,13,2,30,7%,Safe
+2025-07-16,Weekday,17,3,30,10%,Safe
+2025-04-07,Weekday,14,8,30,27%,Safe
+2025-08-09,Saturday,33,15,30,50%,Medium Risk
+2025-01-22,Weekday,35,3,30,10%,Safe
+2025-01-28,Weekday,29,7,30,23%,Safe
+2025-11-11,Weekday,43,2,30,7%,Safe
+2025-02-05,Weekday,6,17,30,57%,Medium Risk
+2025-01-10,Friday,44,19,30,63%,Medium Risk
+2025-12-25,Weekday,29,7,30,23%,Safe
+2025-11-24,Weekday,35,3,30,10%,Safe
+2025-10-10,Friday,31,17,30,57%,Medium Risk
+2025-08-05,Weekday,31,6,30,20%,Safe
+2025-04-06,Sunday,1,30,30,100%,Sell Out Likely
+2025-01-28,Weekday,4,8,30,27%,Safe
+2025-01-10,Friday,20,14,30,47%,Medium Risk
+2025-05-27,Weekday,45,0,30,0%,Safe
+2025-02-12,Weekday,9,0,30,0%,Safe
+2025-02-25,Weekday,43,7,30,23%,Safe
+2025-11-10,Weekday,9,6,30,20%,Safe
+2025-02-03,Weekday,42,5,30,17%,Safe
+2025-01-01,Weekday,20,6,30,20%,Safe
+2025-04-01,Weekday,27,3,30,10%,Safe
+2025-03-08,Saturday,25,7,30,23%,Safe
+2025-01-15,Weekday,13,4,30,13%,Safe
+2025-09-06,Saturday,3,30,30,100%,Sell Out Likely
+2025-07-31,Weekday,26,4,30,13%,Safe
+2025-11-12,Weekday,5,10,30,33%,Safe
+2025-11-03,Weekday,7,8,30,27%,Safe
+2025-11-24,Weekday,5,12,30,40%,Safe
+2025-02-04,Weekday,19,5,30,17%,Safe
+2025-11-21,Friday,37,19,30,63%,Medium Risk
+2025-04-23,Weekday,29,5,30,17%,Safe
+2025-05-14,Weekday,31,6,30,20%,Safe
+2025-09-22,Weekday,32,5,30,17%,Safe
+2025-12-21,Sunday,41,21,30,70%,Medium Risk
+2025-06-04,Weekday,25,0,30,0%,Safe
+2025-01-29,Weekday,32,5,30,17%,Safe
+2025-02-02,Sunday,25,10,30,33%,Safe
+2025-09-11,Weekday,30,2,30,7%,Safe
+2025-06-10,Weekday,39,5,30,17%,Safe
+2025-08-05,Weekday,36,2,30,7%,Safe
+2025-04-23,Weekday,5,9,30,30%,Safe
+2025-09-16,Weekday,24,10,30,33%,Safe
+2025-08-21,Weekday,33,8,30,27%,Safe
+2025-08-20,Weekday,18,10,30,33%,Safe
+2025-11-23,Sunday,13,17,30,57%,Medium Risk
+2025-03-05,Weekday,0,16,30,53%,Sell Out Likely
+2025-12-18,Weekday,37,9,30,30%,Safe
+2025-03-11,Weekday,25,4,30,13%,Safe
+2025-10-29,Weekday,10,2,30,7%,Safe
+2025-12-26,Friday,29,10,30,33%,Safe
+2025-03-13,Weekday,9,0,30,0%,Safe
+2025-12-09,Weekday,23,10,30,33%,Safe
+2025-01-02,Weekday,30,5,30,17%,Safe
+2025-11-25,Weekday,40,1,30,3%,Safe
+2025-06-26,Weekday,25,9,30,30%,Safe
+2025-02-26,Weekday,38,10,30,33%,Safe
+2025-05-21,Weekday,9,2,30,7%,Safe
+2025-12-30,Weekday,13,0,30,0%,Safe
+2025-11-09,Sunday,22,17,30,57%,Medium Risk
+2025-11-06,Weekday,10,9,30,30%,Safe
+2025-04-08,Weekday,23,6,30,20%,Safe
+2025-07-17,Weekday,11,9,30,30%,Safe
+2025-05-09,Friday,21,15,30,50%,Medium Risk
+2025-08-16,Saturday,10,10,30,33%,Safe
+2025-06-08,Sunday,22,24,30,80%,Medium Risk
+2025-06-06,Friday,37,11,30,37%,Safe
+2025-12-23,Weekday,13,6,30,20%,Safe
+2025-10-20,Weekday,22,5,30,17%,Safe
+2025-12-11,Weekday,42,5,30,17%,Safe
+2025-08-23,Saturday,11,20,30,67%,Medium Risk
+2025-08-14,Weekday,25,1,30,3%,Safe
+2025-06-25,Weekday,21,10,30,33%,Safe
+2025-02-13,Weekday,1,20,30,67%,Sell Out Likely
+2025-07-25,Friday,39,22,30,73%,Medium Risk
+2025-09-16,Weekday,17,2,30,7%,Safe
+2025-04-12,Saturday,7,15,30,50%,Medium Risk
+2025-04-18,Friday,16,8,30,27%,Safe
+2025-06-16,Weekday,0,16,30,53%,Sell Out Likely
+2025-08-22,Friday,21,6,30,20%,Safe
+2025-11-19,Weekday,33,10,30,33%,Safe
+2025-07-20,Sunday,19,9,30,30%,Safe
+2025-01-25,Saturday,0,30,30,100%,Sell Out Likely
+2025-11-23,Sunday,43,19,30,63%,Medium Risk
+2025-04-28,Weekday,44,7,30,23%,Safe
+2025-02-01,Saturday,25,11,30,37%,Safe
+2025-05-18,Sunday,35,18,30,60%,Medium Risk
+2025-01-18,Saturday,7,16,30,53%,High Risk
+2025-12-28,Sunday,6,17,30,57%,High Risk
+2025-03-18,Weekday,38,7,30,23%,Safe
+2025-12-12,Friday,5,18,30,60%,High Risk
+2025-11-17,Weekday,29,6,30,20%,Safe
+2025-11-11,Weekday,44,3,30,10%,Safe
+2025-05-16,Friday,3,20,30,67%,Sell Out Likely
+2025-03-10,Weekday,15,3,30,10%,Safe
+2025-11-13,Weekday,23,1,30,3%,Safe
+2025-07-07,Weekday,36,6,30,20%,Safe
+2025-09-25,Weekday,40,9,30,30%,Safe
+2025-12-04,Weekday,22,4,30,13%,Safe
+2025-11-01,Saturday,13,12,30,40%,Medium Risk
+2025-07-08,Weekday,36,0,30,0%,Safe
+2025-08-11,Weekday,15,2,30,7%,Safe
+2025-02-06,Weekday,31,8,30,27%,Safe
+2025-02-02,Sunday,42,12,30,40%,Medium Risk
+2025-01-07,Weekday,34,3,30,10%,Safe
+2025-04-06,Sunday,25,24,30,80%,Medium Risk
+2025-06-06,Friday,14,25,30,83%,High Risk
+2025-12-02,Weekday,42,10,30,33%,Safe
+2025-05-25,Sunday,45,5,30,17%,Safe
+2025-01-06,Weekday,6,7,30,23%,Safe
+2025-12-21,Sunday,10,16,30,53%,Medium Risk
+2025-07-20,Sunday,21,14,30,47%,Medium Risk
+2025-03-18,Weekday,34,7,30,23%,Safe
+2025-11-27,Weekday,42,4,30,13%,Safe
+2025-05-23,Friday,35,20,30,67%,Medium Risk
+2025-08-17,Sunday,33,14,30,47%,Medium Risk
+2025-03-21,Friday,31,17,30,57%,Medium Risk
+2025-12-03,Weekday,39,8,30,27%,Safe
+2025-05-19,Weekday,8,9,30,30%,Safe
+2025-05-30,Friday,39,7,30,23%,Safe
+2025-02-14,Friday,16,18,30,60%,Medium Risk
+2025-06-05,Weekday,4,17,30,57%,Medium Risk
+2025-04-28,Weekday,33,5,30,17%,Safe
+2025-08-13,Weekday,26,8,30,27%,Safe
+2025-06-20,Friday,25,22,30,73%,Medium Risk
+2025-09-04,Weekday,14,1,30,3%,Safe
+2025-12-06,Saturday,24,16,30,53%,Medium Risk
+2025-08-15,Friday,2,11,30,37%,High Risk
+2025-03-05,Weekday,23,9,30,30%,Safe
+2025-05-17,Saturday,4,18,30,60%,High Risk
+2025-02-17,Weekday,37,7,30,23%,Safe
+2025-10-14,Weekday,0,21,30,70%,Sell Out Likely
+2025-07-09,Weekday,22,8,30,27%,Safe
+2025-07-25,Friday,13,18,30,60%,Medium Risk
+2025-07-16,Weekday,14,2,30,7%,Safe
+2025-03-25,Weekday,3,15,30,50%,Medium Risk
+2025-09-23,Weekday,28,8,30,27%,Safe
+2025-04-14,Weekday,21,4,30,13%,Safe
+2025-03-02,Sunday,22,14,30,47%,Medium Risk
+2025-05-12,Weekday,2,13,30,43%,Medium Risk
+2025-06-03,Weekday,5,13,30,43%,Safe
+2025-05-31,Saturday,42,24,30,80%,Medium Risk
+2025-07-22,Weekday,13,7,30,23%,Safe
+2025-08-13,Weekday,35,10,30,33%,Safe
+2025-07-15,Weekday,44,5,30,17%,Safe
+2025-06-01,Sunday,19,16,30,53%,Medium Risk
+2025-11-21,Friday,20,21,30,70%,Medium Risk
+2025-04-26,Saturday,12,12,30,40%,Medium Risk
+2025-05-26,Weekday,11,4,30,13%,Safe
+2025-10-18,Saturday,17,8,30,27%,Safe
+2025-03-03,Weekday,35,8,30,27%,Safe
+2025-03-23,Sunday,1,24,30,80%,Sell Out Likely
+2025-10-03,Friday,38,12,30,40%,Medium Risk
+2025-08-31,Sunday,42,13,30,43%,Medium Risk
+2025-01-19,Sunday,45,10,30,33%,Safe
+2025-04-02,Weekday,15,7,30,23%,Safe
+2025-02-23,Sunday,38,19,30,63%,Medium Risk
+2025-12-06,Saturday,19,19,30,63%,Medium Risk
+2025-12-25,Weekday,7,13,30,43%,Safe
+2025-11-15,Saturday,4,20,30,67%,High Risk
+2025-08-08,Friday,40,11,30,37%,Safe
+2025-12-21,Sunday,39,14,30,47%,Medium Risk
+2025-01-20,Weekday,29,7,30,23%,Safe
+2025-01-22,Weekday,12,10,30,33%,Safe
+2025-04-25,Friday,9,17,30,57%,Medium Risk
+2025-05-20,Weekday,19,6,30,20%,Safe
+2025-02-21,Friday,6,17,30,57%,High Risk
+2025-12-13,Saturday,43,21,30,70%,Medium Risk
+2025-03-13,Weekday,38,4,30,13%,Safe
+2025-09-29,Weekday,30,4,30,13%,Safe
+2025-01-30,Weekday,1,20,30,67%,Sell Out Likely
+2025-02-11,Weekday,15,4,30,13%,Safe
+2025-09-27,Saturday,45,21,30,70%,Medium Risk
+2025-08-14,Weekday,25,7,30,23%,Safe
+2025-07-27,Sunday,15,17,30,57%,Medium Risk
+2025-06-10,Weekday,19,3,30,10%,Safe
+2025-03-05,Weekday,23,5,30,17%,Safe
+2025-10-14,Weekday,23,1,30,3%,Safe
+2025-08-12,Weekday,13,6,30,20%,Safe
+2025-12-19,Friday,20,14,30,47%,Medium Risk
+2025-05-21,Weekday,21,6,30,20%,Safe
+2025-11-21,Friday,23,20,30,67%,Medium Risk
+2025-06-28,Saturday,37,18,30,60%,Medium Risk
+2025-12-19,Friday,45,10,30,33%,Safe
+2025-08-11,Weekday,25,9,30,30%,Safe
+2025-01-14,Weekday,2,13,30,43%,Medium Risk
+2025-04-22,Weekday,27,9,30,30%,Safe
+2025-11-11,Weekday,36,1,30,3%,Safe
+2025-02-23,Sunday,34,12,30,40%,Medium Risk
+2025-11-04,Weekday,30,9,30,30%,Safe
+2025-07-18,Friday,21,15,30,50%,Medium Risk
+2025-04-11,Friday,4,21,30,70%,High Risk
+2025-06-12,Weekday,27,4,30,13%,Safe
+2025-02-13,Weekday,18,2,30,7%,Safe
+2025-09-07,Sunday,22,15,30,50%,Medium Risk
+2025-11-21,Friday,16,16,30,53%,Medium Risk
+2025-11-27,Weekday,29,0,30,0%,Safe
+2025-08-28,Weekday,6,15,30,50%,Medium Risk
+2025-07-24,Weekday,21,1,30,3%,Safe
+2025-04-24,Weekday,33,2,30,7%,Safe
+2025-10-26,Sunday,17,21,30,70%,Medium Risk
+2025-05-14,Weekday,28,5,30,17%,Safe
+2025-04-01,Weekday,17,10,30,33%,Safe
+2025-06-25,Weekday,38,6,30,20%,Safe
+2025-01-13,Weekday,32,8,30,27%,Safe
+2025-09-10,Weekday,27,5,30,17%,Safe
+2025-03-20,Weekday,31,1,30,3%,Safe
+2025-08-16,Saturday,17,17,30,57%,Medium Risk
+2025-01-14,Weekday,20,9,30,30%,Safe
+2025-01-25,Saturday,6,20,30,67%,High Risk
+2025-12-14,Sunday,7,23,30,77%,High Risk
+2025-10-05,Sunday,24,10,30,33%,Safe
+2025-10-18,Saturday,44,15,30,50%,Medium Risk
+2025-09-06,Saturday,44,19,30,63%,Medium Risk
+2025-09-26,Friday,14,14,30,47%,Medium Risk
+2025-05-13,Weekday,25,5,30,17%,Safe
+2025-01-28,Weekday,3,11,30,37%,Medium Risk
+2025-11-30,Sunday,42,18,30,60%,Medium Risk
+2025-02-11,Weekday,16,1,30,3%,Safe
+2025-08-21,Weekday,13,4,30,13%,Safe
+2025-05-01,Weekday,43,5,30,17%,Safe
+2025-01-20,Weekday,37,7,30,23%,Safe
+2025-01-12,Sunday,40,8,30,27%,Safe
+2025-09-20,Saturday,22,18,30,60%,Medium Risk
+2025-08-24,Sunday,39,23,30,77%,Medium Risk
+2025-10-07,Weekday,32,6,30,20%,Safe
+2025-10-13,Weekday,32,1,30,3%,Safe
+2025-12-21,Sunday,19,10,30,33%,Safe
+2025-06-08,Sunday,30,18,30,60%,Medium Risk
+2025-04-06,Sunday,29,22,30,73%,Medium Risk
+2025-05-09,Friday,15,17,30,57%,Medium Risk
+2025-10-10,Friday,37,12,30,40%,Medium Risk
+2025-09-15,Weekday,33,1,30,3%,Safe
+2025-03-09,Sunday,8,16,30,53%,Medium Risk
+2025-04-19,Saturday,31,8,30,27%,Safe
+2025-03-27,Weekday,19,1,30,3%,Safe
+2025-12-27,Saturday,10,13,30,43%,Medium Risk
+2025-05-07,Weekday,23,1,30,3%,Safe
+2025-02-09,Sunday,33,18,30,60%,Medium Risk
+2025-04-12,Saturday,0,30,30,100%,Sell Out Likely
+2025-12-24,Weekday,31,5,30,17%,Safe
+2025-08-17,Sunday,19,19,30,63%,Medium Risk
+2025-05-04,Sunday,45,18,30,60%,Medium Risk
+2025-02-06,Weekday,34,4,30,13%,Safe
+2025-06-06,Friday,8,23,30,77%,Medium Risk
+2025-03-30,Sunday,20,15,30,50%,Medium Risk
+2025-12-02,Weekday,14,3,30,10%,Safe
+2025-08-14,Weekday,30,8,30,27%,Safe
+2025-09-24,Weekday,44,1,30,3%,Safe
+2025-05-30,Friday,29,14,30,47%,Medium Risk
+2025-04-16,Weekday,44,10,30,33%,Safe
+2025-01-01,Weekday,20,1,30,3%,Safe
+2025-12-08,Weekday,24,1,30,3%,Safe
+2025-10-23,Weekday,17,0,30,0%,Safe
+2025-09-14,Sunday,7,18,30,60%,High Risk
+2025-01-12,Sunday,20,10,30,33%,Safe
+2025-09-08,Weekday,1,17,30,57%,Sell Out Likely
+2025-12-02,Weekday,31,0,30,0%,Safe
+2025-08-16,Saturday,1,27,30,90%,Sell Out Likely
+2025-04-12,Saturday,9,13,30,43%,Medium Risk
+2025-12-22,Weekday,30,4,30,13%,Safe
+2025-06-16,Weekday,3,15,30,50%,Medium Risk
+2025-12-07,Sunday,42,16,30,53%,Medium Risk
+2025-07-31,Weekday,8,8,30,27%,Safe
+2025-04-02,Weekday,17,9,30,30%,Safe
+2025-03-14,Friday,29,14,30,47%,Medium Risk
+2025-05-24,Saturday,36,11,30,37%,Safe
+2025-10-02,Weekday,0,23,30,77%,Sell Out Likely
+2025-08-18,Weekday,41,9,30,30%,Safe
+2025-06-11,Weekday,41,9,30,30%,Safe
+2025-08-14,Weekday,26,1,30,3%,Safe
+2025-01-15,Weekday,24,4,30,13%,Safe
+2025-12-04,Weekday,2,11,30,37%,Medium Risk
+2025-11-05,Weekday,45,0,30,0%,Safe
+2025-09-22,Weekday,9,5,30,17%,Safe
+2025-10-27,Weekday,2,7,30,23%,Medium Risk
+2025-03-09,Sunday,44,12,30,40%,Medium Risk
+2025-04-12,Saturday,17,21,30,70%,Medium Risk
+2025-08-30,Saturday,35,22,30,73%,Medium Risk
+2025-02-10,Weekday,34,2,30,7%,Safe
+2025-06-26,Weekday,12,4,30,13%,Safe
+2025-11-12,Weekday,16,0,30,0%,Safe
+2025-10-31,Friday,2,17,30,57%,Sell Out Likely
+2025-03-18,Weekday,35,4,30,13%,Safe
+2025-03-11,Weekday,20,7,30,23%,Safe
+2025-06-04,Weekday,19,7,30,23%,Safe
+2025-02-26,Weekday,13,1,30,3%,Safe
+2025-08-25,Weekday,33,8,30,27%,Safe
+2025-09-22,Weekday,45,6,30,20%,Safe
+2025-04-01,Weekday,39,4,30,13%,Safe
+2025-07-09,Weekday,45,8,30,27%,Safe
+2025-03-25,Weekday,17,1,30,3%,Safe
+2025-11-18,Weekday,28,8,30,27%,Safe
+2025-07-14,Weekday,10,3,30,10%,Safe
+2025-06-16,Weekday,19,3,30,10%,Safe
+2025-01-30,Weekday,7,19,30,63%,Medium Risk
+2025-06-30,Weekday,14,7,30,23%,Safe
+2025-05-08,Weekday,42,9,30,30%,Safe
+2025-07-29,Weekday,43,9,30,30%,Safe
+2025-10-12,Sunday,15,7,30,23%,Safe
+2025-05-30,Friday,30,14,30,47%,Medium Risk
+2025-07-11,Friday,10,16,30,53%,Medium Risk
+2025-01-07,Weekday,18,9,30,30%,Safe
+2025-04-17,Weekday,4,9,30,30%,Safe
+2025-02-13,Weekday,17,3,30,10%,Safe
+2025-08-11,Weekday,28,3,30,10%,Safe
+2025-12-27,Saturday,40,16,30,53%,Medium Risk
+2025-07-28,Weekday,5,15,30,50%,Medium Risk
+2025-07-12,Saturday,15,16,30,53%,Medium Risk
+2025-05-18,Sunday,8,15,30,50%,Medium Risk
+2025-12-19,Friday,11,17,30,57%,Medium Risk
+2025-05-26,Weekday,27,0,30,0%,Safe
+2025-10-01,Weekday,28,0,30,0%,Safe
+2025-03-01,Saturday,24,6,30,20%,Safe
+2025-06-24,Weekday,17,0,30,0%,Safe
+2025-06-18,Weekday,18,3,30,10%,Safe
+2025-03-14,Friday,8,13,30,43%,Medium Risk
+2025-12-22,Weekday,5,13,30,43%,Safe
+2025-09-14,Sunday,45,17,30,57%,Medium Risk
+2025-10-14,Weekday,29,1,30,3%,Safe
+2025-09-04,Weekday,19,1,30,3%,Safe
+2025-02-04,Weekday,9,8,30,27%,Safe
+2025-01-08,Weekday,20,0,30,0%,Safe
+2025-07-04,Friday,44,11,30,37%,Safe
+2025-07-14,Weekday,7,14,30,47%,Safe
+2025-07-23,Weekday,5,9,30,30%,Safe
+2025-09-17,Weekday,28,9,30,30%,Safe
+2025-06-24,Weekday,26,0,30,0%,Safe
+2025-02-27,Weekday,2,12,30,40%,Medium Risk
+2025-09-24,Weekday,30,8,30,27%,Safe
+2025-12-26,Friday,3,27,30,90%,Sell Out Likely
+2025-02-27,Weekday,7,14,30,47%,Safe
+2025-11-16,Sunday,21,23,30,77%,Medium Risk
+2025-11-08,Saturday,19,8,30,27%,Safe
+2025-08-29,Friday,37,10,30,33%,Safe
+2025-06-04,Weekday,24,8,30,27%,Safe
+2025-10-06,Weekday,32,2,30,7%,Safe
+2025-08-31,Sunday,42,17,30,57%,Medium Risk
+2025-05-01,Weekday,14,7,30,23%,Safe
+2025-03-27,Weekday,8,0,30,0%,Safe
+2025-01-05,Sunday,42,17,30,57%,Medium Risk
+2025-03-01,Saturday,42,17,30,57%,Medium Risk
+2025-02-08,Saturday,5,22,30,73%,High Risk
+2025-07-31,Weekday,12,6,30,20%,Safe
+2025-10-08,Weekday,41,3,30,10%,Safe
+2025-02-02,Sunday,34,19,30,63%,Medium Risk
+2025-01-17,Friday,5,23,30,77%,High Risk
+2025-03-30,Sunday,45,9,30,30%,Safe
+2025-01-11,Saturday,45,12,30,40%,Medium Risk
+2025-05-12,Weekday,21,7,30,23%,Safe
+2025-04-28,Weekday,43,4,30,13%,Safe
+2025-12-17,Weekday,10,5,30,17%,Safe
+2025-12-14,Sunday,2,17,30,57%,Sell Out Likely
+2025-07-18,Friday,3,21,30,70%,Sell Out Likely
+2025-05-16,Friday,28,17,30,57%,Medium Risk
+2025-04-14,Weekday,33,0,30,0%,Safe
+2025-11-27,Weekday,35,0,30,0%,Safe
+2025-12-14,Sunday,7,16,30,53%,High Risk
+2025-09-22,Weekday,8,1,30,3%,Safe
+2025-10-01,Weekday,15,6,30,20%,Safe
+2025-03-16,Sunday,22,22,30,73%,Medium Risk
+2025-06-25,Weekday,26,8,30,27%,Safe
+2025-04-24,Weekday,4,13,30,43%,Safe
+2025-01-15,Weekday,12,10,30,33%,Safe
+2025-04-30,Weekday,32,10,30,33%,Safe
+2025-03-17,Weekday,35,8,30,27%,Safe
+2025-11-19,Weekday,36,1,30,3%,Safe
+2025-08-28,Weekday,1,19,30,63%,Sell Out Likely
+2025-06-27,Friday,16,12,30,40%,Medium Risk
+2025-01-11,Saturday,13,12,30,40%,Medium Risk
+2025-07-28,Weekday,33,9,30,30%,Safe
+2025-11-21,Friday,2,12,30,40%,High Risk
+2025-02-25,Weekday,14,1,30,3%,Safe
+2025-09-30,Weekday,31,5,30,17%,Safe
+2025-10-01,Weekday,20,8,30,27%,Safe
+2025-05-18,Sunday,30,12,30,40%,Medium Risk
+2025-09-18,Weekday,6,16,30,53%,Medium Risk
+2025-07-31,Weekday,6,15,30,50%,Medium Risk
+2025-09-05,Friday,28,12,30,40%,Medium Risk
+2025-08-05,Weekday,0,16,30,53%,Sell Out Likely
+2025-09-28,Sunday,19,22,30,73%,Medium Risk
+2025-01-31,Friday,41,19,30,63%,Medium Risk
+2025-02-08,Saturday,26,15,30,50%,Medium Risk
+2025-06-07,Saturday,38,22,30,73%,Medium Risk
+2025-10-26,Sunday,1,30,30,100%,Sell Out Likely
+2025-07-20,Sunday,35,10,30,33%,Safe
+2025-10-15,Weekday,37,4,30,13%,Safe
+2025-11-30,Sunday,34,14,30,47%,Medium Risk
+2025-03-07,Friday,23,19,30,63%,Medium Risk
+2025-11-21,Friday,20,22,30,73%,Medium Risk
+2025-12-20,Saturday,1,27,30,90%,Sell Out Likely
+2025-12-21,Sunday,33,18,30,60%,Medium Risk
+2025-09-09,Weekday,12,5,30,17%,Safe
+2025-06-09,Weekday,7,5,30,17%,Safe
+2025-01-07,Weekday,22,5,30,17%,Safe
+2025-03-30,Sunday,38,14,30,47%,Medium Risk
+2025-02-15,Saturday,37,14,30,47%,Medium Risk
+2025-01-22,Weekday,15,4,30,13%,Safe
+2025-06-14,Saturday,37,18,30,60%,Medium Risk
+2025-11-28,Friday,0,29,30,97%,Sell Out Likely
+2025-07-04,Friday,45,17,30,57%,Medium Risk
+2025-07-20,Sunday,35,22,30,73%,Medium Risk
+2025-04-13,Sunday,32,8,30,27%,Safe
+2025-11-06,Weekday,36,4,30,13%,Safe
+2025-03-25,Weekday,23,3,30,10%,Safe
+2025-03-02,Sunday,33,15,30,50%,Medium Risk
+2025-04-19,Saturday,3,22,30,73%,Sell Out Likely
+2025-06-23,Weekday,13,5,30,17%,Safe
+2025-05-26,Weekday,5,12,30,40%,Safe
+2025-03-16,Sunday,41,13,30,43%,Medium Risk
+2025-02-14,Friday,26,14,30,47%,Medium Risk
+2025-02-24,Weekday,29,1,30,3%,Safe
+2025-11-09,Sunday,7,20,30,67%,High Risk
+2025-01-01,Weekday,43,5,30,17%,Safe
+2025-06-08,Sunday,7,20,30,67%,High Risk
+2025-11-25,Weekday,21,6,30,20%,Safe
+2025-03-29,Saturday,35,14,30,47%,Medium Risk
+2025-11-10,Weekday,14,0,30,0%,Safe
+2025-07-06,Sunday,8,10,30,33%,Safe
+2025-06-03,Weekday,4,8,30,27%,Safe
+2025-09-17,Weekday,36,7,30,23%,Safe
+2025-10-01,Weekday,29,3,30,10%,Safe
+2025-12-01,Weekday,17,9,30,30%,Safe
+2025-09-13,Saturday,21,20,30,67%,Medium Risk
+2025-07-20,Sunday,35,13,30,43%,Medium Risk
+2025-01-03,Friday,18,14,30,47%,Medium Risk
+2025-01-16,Weekday,39,9,30,30%,Safe
+2025-09-03,Weekday,4,15,30,50%,Medium Risk
+2025-11-30,Sunday,39,11,30,37%,Safe
+2025-12-20,Saturday,15,14,30,47%,Medium Risk
+2025-08-31,Sunday,21,16,30,53%,Medium Risk
+2025-07-22,Weekday,43,7,30,23%,Safe
+2025-03-11,Weekday,6,8,30,27%,Safe
+2025-07-31,Weekday,22,7,30,23%,Safe
+2025-02-26,Weekday,25,0,30,0%,Safe
+2025-06-23,Weekday,22,8,30,27%,Safe
+2025-01-10,Friday,26,17,30,57%,Medium Risk
+2025-02-19,Weekday,25,3,30,10%,Safe
+2025-06-11,Weekday,19,5,30,17%,Safe
+2025-01-13,Weekday,30,0,30,0%,Safe
+2025-11-13,Weekday,16,10,30,33%,Safe
+2025-06-26,Weekday,45,2,30,7%,Safe
+2025-01-22,Weekday,19,0,30,0%,Safe
+2025-10-08,Weekday,42,4,30,13%,Safe
+2025-12-13,Saturday,5,20,30,67%,High Risk
+2025-10-21,Weekday,7,7,30,23%,Safe
+2025-08-15,Friday,20,15,30,50%,Medium Risk
+2025-12-16,Weekday,39,6,30,20%,Safe
+2025-05-25,Sunday,21,19,30,63%,Medium Risk
+2025-01-07,Weekday,25,0,30,0%,Safe
+2025-05-05,Weekday,10,1,30,3%,Safe
+2025-09-28,Sunday,14,21,30,70%,Medium Risk
+2025-05-17,Saturday,24,20,30,67%,Medium Risk
+2025-08-25,Weekday,18,8,30,27%,Safe
+2025-06-09,Weekday,42,2,30,7%,Safe
+2025-11-02,Sunday,13,18,30,60%,Medium Risk
+2025-07-10,Weekday,10,8,30,27%,Safe
+2025-08-08,Friday,22,18,30,60%,Medium Risk
+2025-03-11,Weekday,31,9,30,30%,Safe
+2025-12-05,Friday,23,15,30,50%,Medium Risk
+2025-06-15,Sunday,19,9,30,30%,Safe
+2025-04-24,Weekday,15,5,30,17%,Safe
+2025-01-20,Weekday,38,4,30,13%,Safe
+2025-04-21,Weekday,5,16,30,53%,Medium Risk
+2025-06-04,Weekday,7,12,30,40%,Safe
+2025-11-21,Friday,40,18,30,60%,Medium Risk
+2025-02-16,Sunday,9,14,30,47%,Medium Risk
+2025-01-14,Weekday,0,23,30,77%,Sell Out Likely
+2025-12-17,Weekday,42,2,30,7%,Safe
+2025-05-19,Weekday,16,2,30,7%,Safe
+2025-09-16,Weekday,11,4,30,13%,Safe
+2025-12-25,Weekday,38,7,30,23%,Safe
+2025-04-25,Friday,15,16,30,53%,Medium Risk
+2025-05-01,Weekday,31,5,30,17%,Safe
+2025-07-23,Weekday,24,7,30,23%,Safe
+2025-09-12,Friday,9,13,30,43%,Medium Risk
+2025-02-27,Weekday,24,6,30,20%,Safe
+2025-07-21,Weekday,45,10,30,33%,Safe
+2025-10-19,Sunday,11,11,30,37%,Safe
+2025-08-07,Weekday,29,7,30,23%,Safe
+2025-04-29,Weekday,36,8,30,27%,Safe
+2025-06-06,Friday,39,18,30,60%,Medium Risk
+2025-10-30,Weekday,31,0,30,0%,Safe
+2025-06-03,Weekday,29,8,30,27%,Safe
+2025-04-20,Sunday,37,20,30,67%,Medium Risk
+2025-05-31,Saturday,26,8,30,27%,Safe
+2025-01-05,Sunday,15,12,30,40%,Medium Risk
+2025-07-29,Weekday,38,9,30,30%,Safe
+2025-04-11,Friday,0,30,30,100%,Sell Out Likely
+2025-04-24,Weekday,23,1,30,3%,Safe
+2025-06-06,Friday,7,22,30,73%,High Risk
+2025-06-27,Friday,25,7,30,23%,Safe
+2025-01-19,Sunday,3,18,30,60%,Sell Out Likely
+2025-04-15,Weekday,45,2,30,7%,Safe
+2025-12-16,Weekday,10,9,30,30%,Safe
+2025-05-21,Weekday,35,0,30,0%,Safe
+2025-10-14,Weekday,19,4,30,13%,Safe
+2025-03-30,Sunday,30,18,30,60%,Medium Risk
+2025-01-18,Saturday,28,20,30,67%,Medium Risk
+2025-12-04,Weekday,3,12,30,40%,Medium Risk
+2025-03-28,Friday,6,22,30,73%,High Risk
+2025-04-14,Weekday,25,6,30,20%,Safe
+2025-07-13,Sunday,6,29,30,97%,Sell Out Likely
+2025-01-24,Friday,16,15,30,50%,Medium Risk
+2025-01-17,Friday,44,6,30,20%,Safe
+2025-05-03,Saturday,13,12,30,40%,Medium Risk
+2025-04-14,Weekday,28,0,30,0%,Safe
+2025-07-08,Weekday,39,2,30,7%,Safe
+2025-01-09,Weekday,4,12,30,40%,Safe
+2025-03-25,Weekday,5,17,30,57%,Medium Risk
+2025-06-18,Weekday,38,4,30,13%,Safe
+2025-08-01,Friday,42,11,30,37%,Safe
+2025-03-01,Saturday,44,24,30,80%,Medium Risk
+2025-06-08,Sunday,27,21,30,70%,Medium Risk
+2025-11-02,Sunday,17,23,30,77%,Medium Risk
+2025-09-17,Weekday,20,4,30,13%,Safe
+2025-10-21,Weekday,2,16,30,53%,Medium Risk
+2025-09-02,Weekday,45,2,30,7%,Safe
+2025-05-16,Friday,35,18,30,60%,Medium Risk
+2025-12-25,Weekday,12,7,30,23%,Safe
+2025-07-01,Weekday,20,1,30,3%,Safe
+2025-10-29,Weekday,4,16,30,53%,Medium Risk
+2025-08-14,Weekday,3,10,30,33%,Medium Risk
+2025-11-04,Weekday,8,0,30,0%,Safe
+2025-10-17,Friday,25,11,30,37%,Safe
+2025-06-14,Saturday,45,17,30,57%,Medium Risk
+2025-02-28,Friday,24,25,30,83%,High Risk
+2025-05-16,Friday,32,25,30,83%,High Risk
+2025-03-08,Saturday,44,18,30,60%,Medium Risk
+2025-06-04,Weekday,28,3,30,10%,Safe
+2025-04-17,Weekday,8,3,30,10%,Safe
+2025-05-24,Saturday,37,19,30,63%,Medium Risk
+2025-11-03,Weekday,10,10,30,33%,Safe
+2025-04-07,Weekday,21,0,30,0%,Safe
+2025-05-03,Saturday,28,14,30,47%,Medium Risk
+2025-04-25,Friday,40,14,30,47%,Medium Risk
+2025-03-24,Weekday,16,6,30,20%,Safe
+2025-09-30,Weekday,0,27,30,90%,Sell Out Likely
+2025-04-29,Weekday,17,1,30,3%,Safe
+2025-07-04,Friday,32,7,30,23%,Safe
+2025-12-11,Weekday,5,5,30,17%,Safe
+2025-02-22,Saturday,7,21,30,70%,High Risk
+2025-08-31,Sunday,34,15,30,50%,Medium Risk
+2025-12-11,Weekday,44,9,30,30%,Safe
+2025-02-22,Saturday,8,16,30,53%,Medium Risk
+2025-06-24,Weekday,43,4,30,13%,Safe
+2025-03-25,Weekday,16,7,30,23%,Safe
+2025-05-14,Weekday,34,2,30,7%,Safe
+2025-08-27,Weekday,0,19,30,63%,Sell Out Likely
+2025-05-20,Weekday,12,2,30,7%,Safe
+2026-01-01,Weekday,40,1,30,3%,Safe
+2025-11-29,Saturday,28,14,30,47%,Medium Risk
+2025-11-16,Sunday,2,23,30,77%,Sell Out Likely
+2025-02-21,Friday,20,15,30,50%,Medium Risk
+2025-12-22,Weekday,5,11,30,37%,Safe
+2025-01-09,Weekday,12,3,30,10%,Safe
+2025-08-29,Friday,31,21,30,70%,Medium Risk
+2025-10-23,Weekday,1,27,30,90%,Sell Out Likely
+2025-07-02,Weekday,7,12,30,40%,Safe
+2025-04-06,Sunday,4,20,30,67%,High Risk
+2025-06-30,Weekday,44,7,30,23%,Safe
+2025-11-28,Friday,32,13,30,43%,Medium Risk
+2025-04-20,Sunday,34,10,30,33%,Safe
+2025-10-10,Friday,30,14,30,47%,Medium Risk
+2025-03-06,Weekday,38,1,30,3%,Safe
+2025-07-01,Weekday,1,15,30,50%,High Risk
+2025-09-04,Weekday,21,8,30,27%,Safe
+2025-04-29,Weekday,2,19,30,63%,High Risk
+2025-01-19,Sunday,2,23,30,77%,Sell Out Likely
+2025-03-05,Weekday,15,8,30,27%,Safe
+2025-09-07,Sunday,10,16,30,53%,Medium Risk
+2025-11-13,Weekday,5,12,30,40%,Safe
+2025-10-05,Sunday,43,15,30,50%,Medium Risk
+2025-02-08,Saturday,23,20,30,67%,Medium Risk
+2025-12-07,Sunday,30,19,30,63%,Medium Risk
+2025-06-30,Weekday,23,10,30,33%,Safe
+2025-12-26,Friday,5,30,30,100%,Sell Out Likely
+2025-12-12,Friday,35,17,30,57%,Medium Risk
+2025-12-31,Weekday,10,8,30,27%,Safe
+2025-10-02,Weekday,11,6,30,20%,Safe
+2025-05-29,Weekday,25,5,30,17%,Safe
+2025-11-21,Friday,20,14,30,47%,Medium Risk
+2025-04-30,Weekday,26,8,30,27%,Safe
+2025-09-10,Weekday,38,8,30,27%,Safe
+2025-12-30,Weekday,28,2,30,7%,Safe
+2025-04-29,Weekday,0,23,30,77%,Sell Out Likely
+2025-04-26,Saturday,42,20,30,67%,Medium Risk
+2025-11-17,Weekday,10,3,30,10%,Safe
+2025-11-03,Weekday,19,1,30,3%,Safe
+2025-04-16,Weekday,14,2,30,7%,Safe
+2025-02-19,Weekday,9,1,30,3%,Safe
+2025-12-26,Friday,22,18,30,60%,Medium Risk
+2025-06-18,Weekday,33,4,30,13%,Safe
+2025-10-11,Saturday,22,19,30,63%,Medium Risk
+2025-04-16,Weekday,41,8,30,27%,Safe
+2025-11-29,Saturday,23,17,30,57%,Medium Risk
+2025-03-26,Weekday,14,5,30,17%,Safe
+2025-03-09,Sunday,4,23,30,77%,High Risk
+2025-02-21,Friday,17,12,30,40%,Medium Risk
+2025-04-23,Weekday,33,1,30,3%,Safe
+2025-12-24,Weekday,33,6,30,20%,Safe
+2025-03-12,Weekday,2,13,30,43%,Medium Risk
+2025-05-01,Weekday,2,11,30,37%,Medium Risk
+2025-10-10,Friday,4,24,30,80%,High Risk
+2025-12-04,Weekday,35,0,30,0%,Safe
+2025-05-18,Sunday,22,11,30,37%,Safe
+2025-10-04,Saturday,22,7,30,23%,Safe
+2025-02-18,Weekday,4,8,30,27%,Safe
+2025-10-27,Weekday,5,13,30,43%,Safe
+2025-08-30,Saturday,33,16,30,53%,Medium Risk
+2025-04-23,Weekday,5,10,30,33%,Safe
+2025-01-03,Friday,30,15,30,50%,Medium Risk
+2025-01-20,Weekday,20,6,30,20%,Safe
+2025-05-06,Weekday,36,5,30,17%,Safe
+2025-05-15,Weekday,1,29,30,97%,Sell Out Likely
+2025-12-30,Weekday,31,3,30,10%,Safe
+2025-10-30,Weekday,44,6,30,20%,Safe
+2025-03-16,Sunday,32,9,30,30%,Safe
+2025-09-24,Weekday,28,7,30,23%,Safe
+2025-05-14,Weekday,23,9,30,30%,Safe
+2025-01-03,Friday,13,18,30,60%,Medium Risk
+2025-03-18,Weekday,14,6,30,20%,Safe
+2025-11-13,Weekday,18,5,30,17%,Safe
+2025-11-06,Weekday,3,17,30,57%,Medium Risk
+2025-03-27,Weekday,1,16,30,53%,Sell Out Likely
+2025-11-01,Saturday,4,18,30,60%,High Risk
+2025-02-20,Weekday,41,5,30,17%,Safe
+2025-06-02,Weekday,19,2,30,7%,Safe
+2025-11-18,Weekday,32,9,30,30%,Safe
+2025-11-23,Sunday,3,20,30,67%,Sell Out Likely
+2025-08-07,Weekday,44,9,30,30%,Safe
+2025-11-15,Saturday,9,15,30,50%,Medium Risk
+2025-11-06,Weekday,14,4,30,13%,Safe
+2025-08-02,Saturday,22,15,30,50%,Medium Risk
+2025-09-02,Weekday,22,2,30,7%,Safe
+2025-07-04,Friday,24,24,30,80%,Medium Risk
+2025-05-09,Friday,39,20,30,67%,Medium Risk
+2025-01-24,Friday,10,8,30,27%,Safe
+2025-05-20,Weekday,8,10,30,33%,Safe
+2025-11-17,Weekday,19,5,30,17%,Safe
+2025-08-17,Sunday,37,18,30,60%,Medium Risk
+2025-04-03,Weekday,27,0,30,0%,Safe
+2025-07-05,Saturday,1,18,30,60%,Sell Out Likely
+2025-01-04,Saturday,41,16,30,53%,Medium Risk
+2025-07-14,Weekday,15,1,30,3%,Safe
+2025-09-20,Saturday,34,15,30,50%,Medium Risk
+2025-01-26,Sunday,45,18,30,60%,Medium Risk
+2025-05-30,Friday,40,23,30,77%,Medium Risk
+2025-07-02,Weekday,23,3,30,10%,Safe
+2025-08-29,Friday,32,8,30,27%,Safe
+2025-03-03,Weekday,32,8,30,27%,Safe
+2025-05-05,Weekday,44,6,30,20%,Safe
+2025-01-06,Weekday,27,1,30,3%,Safe
+2025-08-14,Weekday,29,3,30,10%,Safe
+2025-06-28,Saturday,34,13,30,43%,Medium Risk
+2025-03-17,Weekday,5,15,30,50%,Medium Risk
+2025-09-19,Friday,35,16,30,53%,Medium Risk
+2025-03-22,Saturday,44,16,30,53%,Medium Risk
+2025-03-22,Saturday,14,14,30,47%,Medium Risk
+2025-06-25,Weekday,15,3,30,10%,Safe
+2025-03-29,Saturday,17,16,30,53%,Medium Risk
+2025-12-30,Weekday,21,2,30,7%,Safe
+2025-08-13,Weekday,15,8,30,27%,Safe
+2025-10-07,Weekday,34,2,30,7%,Safe
+2025-02-13,Weekday,30,10,30,33%,Safe
+2025-11-30,Sunday,24,18,30,60%,Medium Risk
+2025-12-25,Weekday,2,13,30,43%,Medium Risk
+2025-09-16,Weekday,38,6,30,20%,Safe
+2025-07-15,Weekday,33,3,30,10%,Safe
+2025-07-23,Weekday,27,10,30,33%,Safe
+2025-04-03,Weekday,35,9,30,30%,Safe
+2025-06-15,Sunday,45,16,30,53%,Medium Risk
+2025-09-03,Weekday,19,0,30,0%,Safe
+2025-05-25,Sunday,23,12,30,40%,Medium Risk
+2025-10-29,Weekday,11,2,30,7%,Safe
+2025-04-15,Weekday,40,5,30,17%,Safe
+2025-12-22,Weekday,43,1,30,3%,Safe
+2025-05-24,Saturday,36,14,30,47%,Medium Risk
+2025-05-28,Weekday,42,5,30,17%,Safe
+2025-11-28,Friday,6,23,30,77%,High Risk
+2025-03-17,Weekday,18,3,30,10%,Safe
+2025-09-21,Sunday,29,14,30,47%,Medium Risk
+2025-08-18,Weekday,22,0,30,0%,Safe
+2025-11-18,Weekday,5,14,30,47%,Safe
+2025-02-04,Weekday,16,8,30,27%,Safe
+2025-04-12,Saturday,25,15,30,50%,Medium Risk
+2025-06-18,Weekday,8,3,30,10%,Safe
+2025-02-07,Friday,19,17,30,57%,Medium Risk
+2025-02-11,Weekday,23,5,30,17%,Safe
+2025-07-28,Weekday,13,4,30,13%,Safe
+2025-11-01,Saturday,12,7,30,23%,Safe
+2025-08-04,Weekday,42,5,30,17%,Safe
+2025-12-02,Weekday,1,12,30,40%,High Risk
+2025-03-05,Weekday,18,8,30,27%,Safe
+2025-07-22,Weekday,34,5,30,17%,Safe
+2025-09-04,Weekday,17,2,30,7%,Safe
+2025-02-04,Weekday,5,14,30,47%,Safe
+2025-10-12,Sunday,5,30,30,100%,Sell Out Likely
+2025-12-11,Weekday,29,3,30,10%,Safe
+2025-05-16,Friday,31,6,30,20%,Safe
+2025-10-06,Weekday,27,5,30,17%,Safe
+2025-10-14,Weekday,13,10,30,33%,Safe
+2025-04-10,Weekday,1,20,30,67%,Sell Out Likely
+2025-08-06,Weekday,0,17,30,57%,Sell Out Likely
+2025-06-08,Sunday,5,14,30,47%,Medium Risk
+2025-03-10,Weekday,16,3,30,10%,Safe
+2025-11-18,Weekday,16,7,30,23%,Safe
+2025-05-22,Weekday,16,3,30,10%,Safe
+2025-04-26,Saturday,3,26,30,87%,Sell Out Likely
+2025-08-11,Weekday,45,1,30,3%,Safe
+2025-09-28,Sunday,10,18,30,60%,Medium Risk
+2025-08-30,Saturday,31,20,30,67%,Medium Risk
+2025-05-31,Saturday,3,30,30,100%,Sell Out Likely
+2025-02-08,Saturday,5,18,30,60%,High Risk
+2025-11-03,Weekday,19,1,30,3%,Safe
+2025-05-06,Weekday,37,2,30,7%,Safe
+2025-05-26,Weekday,34,3,30,10%,Safe
+2025-12-29,Weekday,44,10,30,33%,Safe
+2025-07-26,Saturday,19,17,30,57%,Medium Risk
+2025-02-09,Sunday,29,10,30,33%,Safe
+2025-01-10,Friday,17,14,30,47%,Medium Risk
+2025-10-20,Weekday,9,2,30,7%,Safe
+2025-09-20,Saturday,15,10,30,33%,Safe
+2025-04-03,Weekday,28,3,30,10%,Safe
+2025-09-11,Weekday,28,4,30,13%,Safe
+2025-02-04,Weekday,11,0,30,0%,Safe
+2025-01-21,Weekday,40,4,30,13%,Safe
+2025-07-14,Weekday,21,6,30,20%,Safe
+2025-11-20,Weekday,31,1,30,3%,Safe
+2025-10-05,Sunday,42,16,30,53%,Medium Risk
+2025-03-05,Weekday,44,8,30,27%,Safe
+2025-12-15,Weekday,19,3,30,10%,Safe
+2025-09-30,Weekday,31,5,30,17%,Safe
+2025-10-05,Sunday,36,17,30,57%,Medium Risk
+2025-01-01,Weekday,19,3,30,10%,Safe
+2025-05-05,Weekday,13,10,30,33%,Safe
+2025-02-20,Weekday,30,2,30,7%,Safe
+2025-03-22,Saturday,40,10,30,33%,Safe
+2025-04-04,Friday,35,7,30,23%,Safe
+2025-03-15,Saturday,39,14,30,47%,Medium Risk
+2025-09-11,Weekday,12,0,30,0%,Safe
+2025-02-16,Sunday,5,23,30,77%,High Risk
+2025-07-24,Weekday,23,4,30,13%,Safe
+2025-03-10,Weekday,12,7,30,23%,Safe
+2025-02-25,Weekday,7,14,30,47%,Safe
+2025-01-09,Weekday,9,10,30,33%,Safe
+2025-08-28,Weekday,34,5,30,17%,Safe
+2025-07-18,Friday,32,13,30,43%,Medium Risk
+2025-06-02,Weekday,30,9,30,30%,Safe
+2025-12-04,Weekday,38,4,30,13%,Safe
+2025-12-03,Weekday,4,12,30,40%,Safe
+2025-09-20,Saturday,39,19,30,63%,Medium Risk
+2025-11-25,Weekday,1,11,30,37%,High Risk
+2025-12-10,Weekday,33,1,30,3%,Safe
+2025-02-24,Weekday,45,5,30,17%,Safe
+2025-08-25,Weekday,44,6,30,20%,Safe
+2025-07-10,Weekday,1,18,30,60%,Sell Out Likely
+2025-02-23,Sunday,32,20,30,67%,Medium Risk
+2025-04-18,Friday,41,16,30,53%,Medium Risk
+2025-11-09,Sunday,42,14,30,47%,Medium Risk
+2025-04-20,Sunday,7,19,30,63%,High Risk
+2025-02-06,Weekday,24,1,30,3%,Safe
+2025-03-07,Friday,17,21,30,70%,Medium Risk
+2025-05-15,Weekday,33,9,30,30%,Safe
+2025-10-05,Sunday,27,19,30,63%,Medium Risk
+2025-10-16,Weekday,44,3,30,10%,Safe
+2025-03-05,Weekday,3,13,30,43%,Medium Risk
+2025-03-25,Weekday,26,9,30,30%,Safe
+2025-06-24,Weekday,14,8,30,27%,Safe
+2025-06-07,Saturday,24,14,30,47%,Medium Risk
+2025-01-04,Saturday,28,20,30,67%,Medium Risk
+2025-08-04,Weekday,7,19,30,63%,Medium Risk
+2025-08-23,Saturday,37,22,30,73%,Medium Risk
+2025-10-27,Weekday,10,2,30,7%,Safe
+2025-04-23,Weekday,27,2,30,7%,Safe
+2025-10-28,Weekday,22,6,30,20%,Safe
+2025-03-25,Weekday,38,0,30,0%,Safe
+2025-10-15,Weekday,18,6,30,20%,Safe
+2025-10-30,Weekday,22,9,30,30%,Safe
+2025-03-07,Friday,13,21,30,70%,Medium Risk
+2025-01-25,Saturday,18,16,30,53%,Medium Risk
+2025-10-02,Weekday,17,2,30,7%,Safe
+2025-02-10,Weekday,43,9,30,30%,Safe
+2025-01-16,Weekday,40,6,30,20%,Safe
+2025-08-28,Weekday,45,3,30,10%,Safe
+2025-02-13,Weekday,13,6,30,20%,Safe
+2025-10-29,Weekday,23,2,30,7%,Safe
+2025-12-11,Weekday,2,6,30,20%,Medium Risk
+2025-08-15,Friday,0,30,30,100%,Sell Out Likely
+2025-06-17,Weekday,21,9,30,30%,Safe
+2025-06-14,Saturday,19,9,30,30%,Safe
+2025-08-29,Friday,13,23,30,77%,Medium Risk
+2025-07-25,Friday,11,15,30,50%,Medium Risk
+2025-09-05,Friday,3,18,30,60%,Sell Out Likely
+2025-01-26,Sunday,28,9,30,30%,Safe
+2025-11-04,Weekday,16,4,30,13%,Safe
+2025-10-05,Sunday,2,25,30,83%,Sell Out Likely
+2025-02-25,Weekday,4,16,30,53%,Medium Risk
+2025-09-09,Weekday,43,4,30,13%,Safe
+2025-05-23,Friday,23,21,30,70%,Medium Risk
+2025-06-24,Weekday,0,25,30,83%,Sell Out Likely
+2025-01-03,Friday,39,12,30,40%,Medium Risk
+2025-06-07,Saturday,25,22,30,73%,Medium Risk
+2025-12-19,Friday,41,13,30,43%,Medium Risk
+2025-05-21,Weekday,20,0,30,0%,Safe
+2025-05-10,Saturday,40,15,30,50%,Medium Risk
+2025-01-28,Weekday,5,15,30,50%,Medium Risk
+2025-10-08,Weekday,13,9,30,30%,Safe
+2025-01-03,Friday,26,8,30,27%,Safe
+2025-08-18,Weekday,5,11,30,37%,Safe
+2025-11-12,Weekday,6,8,30,27%,Safe
+2025-08-02,Saturday,18,15,30,50%,Medium Risk
+2025-03-26,Weekday,29,9,30,30%,Safe
+2025-10-28,Weekday,17,8,30,27%,Safe
+2025-10-20,Weekday,2,11,30,37%,Medium Risk
+2025-02-09,Sunday,12,11,30,37%,Safe
+2025-11-04,Weekday,40,7,30,23%,Safe
+2025-06-03,Weekday,1,20,30,67%,Sell Out Likely
+2025-03-03,Weekday,27,4,30,13%,Safe
+2025-08-04,Weekday,7,10,30,33%,Safe
+2025-06-08,Sunday,2,20,30,67%,Sell Out Likely
+2025-11-15,Saturday,10,16,30,53%,Medium Risk
+2025-10-08,Weekday,40,9,30,30%,Safe
+2025-07-26,Saturday,17,8,30,27%,Safe
+2025-04-15,Weekday,44,8,30,27%,Safe
+2025-05-10,Saturday,6,22,30,73%,High Risk
+2025-09-21,Sunday,25,22,30,73%,Medium Risk
+2025-07-25,Friday,0,30,30,100%,Sell Out Likely
+2025-04-28,Weekday,35,6,30,20%,Safe
+2025-03-18,Weekday,2,11,30,37%,Medium Risk
+2025-09-08,Weekday,9,0,30,0%,Safe
+2025-06-21,Saturday,37,13,30,43%,Medium Risk
+2025-10-01,Weekday,0,22,30,73%,Sell Out Likely
+2025-03-29,Saturday,11,13,30,43%,Medium Risk
+2025-01-16,Weekday,11,0,30,0%,Safe
+2025-05-09,Friday,6,22,30,73%,High Risk
+2025-03-22,Saturday,9,22,30,73%,Medium Risk
+2025-01-11,Saturday,35,14,30,47%,Medium Risk
+2025-02-04,Weekday,0,28,30,93%,Sell Out Likely
+2025-02-28,Friday,13,20,30,67%,Medium Risk
+2025-03-30,Sunday,32,11,30,37%,Safe
+2025-12-25,Weekday,39,0,30,0%,Safe
+2025-12-31,Weekday,11,7,30,23%,Safe
+2025-05-15,Weekday,38,3,30,10%,Safe
+2025-09-18,Weekday,43,6,30,20%,Safe
+2025-02-11,Weekday,33,10,30,33%,Safe
+2025-01-01,Weekday,28,9,30,30%,Safe
+2025-09-05,Friday,1,30,30,100%,Sell Out Likely
+2025-07-07,Weekday,33,0,30,0%,Safe
+2025-02-19,Weekday,2,13,30,43%,Medium Risk
+2025-06-27,Friday,13,16,30,53%,Medium Risk
+2025-09-19,Friday,41,21,30,70%,Medium Risk
+2025-05-04,Sunday,2,21,30,70%,Sell Out Likely
+2025-06-03,Weekday,34,8,30,27%,Safe
+2025-06-18,Weekday,12,7,30,23%,Safe
+2025-01-31,Friday,29,18,30,60%,Medium Risk
+2025-03-13,Weekday,3,9,30,30%,Medium Risk
+2025-09-08,Weekday,38,3,30,10%,Safe
+2025-08-22,Friday,14,22,30,73%,Medium Risk
+2025-03-18,Weekday,1,20,30,67%,Sell Out Likely
+2025-06-12,Weekday,26,2,30,7%,Safe
+2025-02-02,Sunday,1,30,30,100%,Sell Out Likely
+2025-03-30,Sunday,20,24,30,80%,Medium Risk
+2025-03-18,Weekday,36,4,30,13%,Safe
+2025-03-31,Weekday,21,0,30,0%,Safe
+2025-10-25,Saturday,28,13,30,43%,Medium Risk
+2025-03-02,Sunday,0,25,30,83%,Sell Out Likely
+2025-05-10,Saturday,27,19,30,63%,Medium Risk
+2025-01-27,Weekday,22,10,30,33%,Safe
+2025-02-21,Friday,17,25,30,83%,High Risk
+2025-01-16,Weekday,28,0,30,0%,Safe
+2025-08-15,Friday,15,11,30,37%,Safe
+2025-12-11,Weekday,39,3,30,10%,Safe
+2025-09-11,Weekday,3,15,30,50%,Medium Risk
+2025-12-30,Weekday,34,3,30,10%,Safe
+2025-05-21,Weekday,40,2,30,7%,Safe
+2025-07-16,Weekday,20,9,30,30%,Safe
+2025-07-05,Saturday,43,12,30,40%,Medium Risk
+2025-12-10,Weekday,20,4,30,13%,Safe
+2025-10-15,Weekday,34,10,30,33%,Safe
+2025-12-20,Saturday,19,18,30,60%,Medium Risk
+2025-10-13,Weekday,39,6,30,20%,Safe
+2025-03-20,Weekday,6,13,30,43%,Safe
+2025-02-19,Weekday,30,2,30,7%,Safe
+2025-03-20,Weekday,21,4,30,13%,Safe
+2025-04-26,Saturday,5,14,30,47%,Medium Risk
+2025-10-19,Sunday,45,7,30,23%,Safe
+2025-10-04,Saturday,29,11,30,37%,Safe
+2025-10-19,Sunday,3,24,30,80%,Sell Out Likely
+2025-07-21,Weekday,26,2,30,7%,Safe
+2025-12-28,Sunday,34,12,30,40%,Medium Risk
+2025-11-16,Sunday,17,8,30,27%,Safe
+2025-08-21,Weekday,14,3,30,10%,Safe
+2025-11-26,Weekday,32,6,30,20%,Safe
+2025-07-02,Weekday,10,8,30,27%,Safe
+2025-04-06,Sunday,22,17,30,57%,Medium Risk
+2025-10-29,Weekday,11,3,30,10%,Safe
+2025-06-09,Weekday,4,9,30,30%,Safe
+2025-06-29,Sunday,1,22,30,73%,Sell Out Likely
+2025-08-28,Weekday,9,5,30,17%,Safe
+2025-01-30,Weekday,32,9,30,30%,Safe
+2025-05-24,Saturday,2,30,30,100%,Sell Out Likely
+2025-04-23,Weekday,38,9,30,30%,Safe
+2025-08-16,Saturday,2,20,30,67%,Sell Out Likely
+2025-08-13,Weekday,35,8,30,27%,Safe
+2025-06-28,Saturday,24,18,30,60%,Medium Risk
+2025-06-27,Friday,30,12,30,40%,Medium Risk
+2025-09-19,Friday,31,21,30,70%,Medium Risk
+2025-12-06,Saturday,40,19,30,63%,Medium Risk
+2025-08-14,Weekday,9,4,30,13%,Safe
+2025-10-12,Sunday,40,14,30,47%,Medium Risk
+2025-01-22,Weekday,32,7,30,23%,Safe
+2025-03-28,Friday,30,16,30,53%,Medium Risk
+2025-06-10,Weekday,14,4,30,13%,Safe
+2025-09-09,Weekday,34,4,30,13%,Safe
+2025-07-13,Sunday,6,19,30,63%,High Risk
+2025-01-07,Weekday,44,3,30,10%,Safe
+2025-03-31,Weekday,17,6,30,20%,Safe
+2025-09-27,Saturday,7,19,30,63%,High Risk
+2025-08-04,Weekday,12,2,30,7%,Safe
+2025-05-29,Weekday,38,1,30,3%,Safe
+2025-03-18,Weekday,12,7,30,23%,Safe
+2025-03-11,Weekday,23,10,30,33%,Safe
+2025-04-20,Sunday,12,7,30,23%,Safe
+2025-07-28,Weekday,43,6,30,20%,Safe
+2025-02-03,Weekday,19,3,30,10%,Safe
+2025-02-14,Friday,22,13,30,43%,Medium Risk
+2025-11-25,Weekday,27,2,30,7%,Safe
+2025-05-03,Saturday,18,16,30,53%,Medium Risk
+2025-04-13,Sunday,38,21,30,70%,Medium Risk
+2025-12-04,Weekday,18,6,30,20%,Safe
+2025-02-12,Weekday,23,1,30,3%,Safe
+2025-10-20,Weekday,16,1,30,3%,Safe
+2025-10-17,Friday,16,16,30,53%,Medium Risk
+2025-07-21,Weekday,24,1,30,3%,Safe
+2025-01-04,Saturday,20,19,30,63%,Medium Risk
+2025-06-17,Weekday,37,1,30,3%,Safe
+2025-02-07,Friday,16,12,30,40%,Medium Risk
+2025-10-05,Sunday,8,7,30,23%,Safe
+2025-02-20,Weekday,30,0,30,0%,Safe
+2025-12-30,Weekday,4,12,30,40%,Safe
+2025-04-18,Friday,34,12,30,40%,Medium Risk
+2025-04-15,Weekday,32,8,30,27%,Safe
+2025-04-18,Friday,8,18,30,60%,Medium Risk
+2025-12-28,Sunday,12,12,30,40%,Medium Risk
+2025-08-27,Weekday,4,9,30,30%,Safe
+2025-05-19,Weekday,45,7,30,23%,Safe
+2025-06-18,Weekday,26,0,30,0%,Safe
+2025-02-21,Friday,35,25,30,83%,High Risk
+2025-06-02,Weekday,21,7,30,23%,Safe
+2025-05-11,Sunday,8,25,30,83%,High Risk
+2025-03-06,Weekday,8,0,30,0%,Safe
+2025-11-07,Friday,44,15,30,50%,Medium Risk
+2025-06-17,Weekday,9,6,30,20%,Safe
+2025-01-07,Weekday,7,12,30,40%,Safe
+2025-04-26,Saturday,36,18,30,60%,Medium Risk
+2025-07-30,Weekday,30,1,30,3%,Safe
+2025-12-16,Weekday,6,10,30,33%,Safe
+2025-12-19,Friday,23,9,30,30%,Safe
+2025-09-18,Weekday,9,6,30,20%,Safe
+2025-01-15,Weekday,27,2,30,7%,Safe
+2025-09-05,Friday,18,17,30,57%,Medium Risk
+2025-02-12,Weekday,32,4,30,13%,Safe
+2025-10-26,Sunday,36,17,30,57%,Medium Risk
+2025-12-08,Weekday,27,5,30,17%,Safe
+2025-07-23,Weekday,23,8,30,27%,Safe
+2025-07-07,Weekday,7,14,30,47%,Safe
+2025-08-06,Weekday,37,8,30,27%,Safe
+2025-06-30,Weekday,15,5,30,17%,Safe
+2025-05-16,Friday,40,12,30,40%,Medium Risk
+2025-04-16,Weekday,40,3,30,10%,Safe
+2025-12-23,Weekday,23,8,30,27%,Safe
+2025-04-14,Weekday,19,0,30,0%,Safe
+2025-10-02,Weekday,14,2,30,7%,Safe
+2025-03-22,Saturday,9,11,30,37%,Safe
+2025-12-09,Weekday,24,6,30,20%,Safe
+2025-05-08,Weekday,42,6,30,20%,Safe
+2025-12-04,Weekday,3,8,30,27%,Medium Risk
+2025-11-27,Weekday,11,8,30,27%,Safe
+2025-01-19,Sunday,41,24,30,80%,Medium Risk
+2025-06-08,Sunday,42,21,30,70%,Medium Risk
+2025-10-06,Weekday,26,3,30,10%,Safe
+2025-11-04,Weekday,33,5,30,17%,Safe
+2025-12-19,Friday,4,19,30,63%,High Risk
+2025-01-04,Saturday,18,17,30,57%,Medium Risk
+2025-11-04,Weekday,12,10,30,33%,Safe
+2025-12-04,Weekday,10,5,30,17%,Safe
+2025-09-08,Weekday,38,5,30,17%,Safe
+2025-07-04,Friday,30,20,30,67%,Medium Risk
+2025-11-28,Friday,29,6,30,20%,Safe
+2025-04-07,Weekday,17,8,30,27%,Safe
+2025-02-07,Friday,4,28,30,93%,Sell Out Likely
+2025-05-14,Weekday,15,8,30,27%,Safe
+2025-04-23,Weekday,42,8,30,27%,Safe
+2025-03-22,Saturday,28,18,30,60%,Medium Risk
+2025-09-25,Weekday,5,10,30,33%,Safe
+2025-05-04,Sunday,42,14,30,47%,Medium Risk
+2025-01-04,Saturday,24,10,30,33%,Safe
+2025-11-02,Sunday,0,27,30,90%,Sell Out Likely
+2025-08-06,Weekday,33,4,30,13%,Safe
+2025-05-02,Friday,31,14,30,47%,Medium Risk
+2025-09-10,Weekday,45,4,30,13%,Safe
+2025-09-02,Weekday,11,7,30,23%,Safe
+2025-01-05,Sunday,19,18,30,60%,Medium Risk
+2025-03-28,Friday,25,15,30,50%,Medium Risk
+2025-01-07,Weekday,15,9,30,30%,Safe
+2025-08-29,Friday,19,11,30,37%,Safe
+2025-05-03,Saturday,29,8,30,27%,Safe
+2025-03-08,Saturday,44,16,30,53%,Medium Risk
+2025-04-21,Weekday,10,6,30,20%,Safe
+2025-09-14,Sunday,2,22,30,73%,Sell Out Likely
+2025-05-05,Weekday,25,2,30,7%,Safe
+2025-06-19,Weekday,12,8,30,27%,Safe
+2025-07-13,Sunday,12,9,30,30%,Safe
+2025-09-04,Weekday,35,2,30,7%,Safe
+2025-05-17,Saturday,19,20,30,67%,Medium Risk
+2025-02-25,Weekday,45,10,30,33%,Safe
+2025-04-22,Weekday,43,5,30,17%,Safe
+2025-11-29,Saturday,10,20,30,67%,Medium Risk
+2025-04-23,Weekday,26,3,30,10%,Safe
+2025-09-28,Sunday,27,17,30,57%,Medium Risk
+2025-06-05,Weekday,32,1,30,3%,Safe
+2025-12-09,Weekday,31,2,30,7%,Safe
+2025-01-10,Friday,27,8,30,27%,Safe
+2025-12-19,Friday,19,23,30,77%,Medium Risk
+2025-12-01,Weekday,42,1,30,3%,Safe
+2025-11-05,Weekday,43,3,30,10%,Safe
+2025-04-21,Weekday,20,6,30,20%,Safe
+2025-04-22,Weekday,22,8,30,27%,Safe
+2025-03-05,Weekday,25,10,30,33%,Safe
+2025-01-04,Saturday,22,15,30,50%,Medium Risk
+2025-11-14,Friday,14,14,30,47%,Medium Risk
+2025-08-04,Weekday,23,4,30,13%,Safe
+2025-10-18,Saturday,42,20,30,67%,Medium Risk
+2025-04-28,Weekday,45,1,30,3%,Safe
+2025-05-18,Sunday,9,22,30,73%,Medium Risk
+2025-02-23,Sunday,25,14,30,47%,Medium Risk
+2025-05-08,Weekday,31,7,30,23%,Safe
+2025-07-09,Weekday,10,10,30,33%,Safe
+2025-05-17,Saturday,15,8,30,27%,Safe
+2025-11-28,Friday,8,18,30,60%,Medium Risk
+2025-05-16,Friday,42,16,30,53%,Medium Risk
+2025-05-25,Sunday,28,24,30,80%,Medium Risk
+2025-08-03,Sunday,43,24,30,80%,Medium Risk
+2025-01-08,Weekday,12,4,30,13%,Safe
+2025-11-12,Weekday,37,2,30,7%,Safe
+2025-06-15,Sunday,32,21,30,70%,Medium Risk
+2025-06-18,Weekday,5,10,30,33%,Safe
+2025-10-18,Saturday,27,11,30,37%,Safe
+2025-08-02,Saturday,38,16,30,53%,Medium Risk
+2025-10-21,Weekday,42,8,30,27%,Safe
+2025-12-12,Friday,36,18,30,60%,Medium Risk
+2025-08-07,Weekday,23,6,30,20%,Safe
+2025-02-28,Friday,42,16,30,53%,Medium Risk
+2025-10-29,Weekday,38,2,30,7%,Safe
+2025-09-25,Weekday,24,7,30,23%,Safe
+2025-10-19,Sunday,18,10,30,33%,Safe
+2025-06-10,Weekday,2,11,30,37%,Medium Risk
+2025-03-12,Weekday,22,9,30,30%,Safe
+2025-11-19,Weekday,33,7,30,23%,Safe
+2025-12-25,Weekday,34,0,30,0%,Safe
+2025-09-08,Weekday,15,5,30,17%,Safe
+2025-11-03,Weekday,0,22,30,73%,Sell Out Likely
+2025-04-27,Sunday,25,11,30,37%,Safe
+2025-07-16,Weekday,27,8,30,27%,Safe
+2025-12-19,Friday,20,10,30,33%,Safe
+2025-09-10,Weekday,38,10,30,33%,Safe
+2025-08-08,Friday,18,18,30,60%,Medium Risk
+2025-06-23,Weekday,2,6,30,20%,Medium Risk
+2025-01-18,Saturday,16,21,30,70%,Medium Risk
+2025-05-27,Weekday,16,8,30,27%,Safe
+2025-04-02,Weekday,38,1,30,3%,Safe
+2025-11-08,Saturday,31,15,30,50%,Medium Risk
+2025-06-22,Sunday,41,11,30,37%,Safe
+2025-01-29,Weekday,31,7,30,23%,Safe
+2025-02-15,Saturday,16,19,30,63%,Medium Risk
+2025-12-30,Weekday,40,4,30,13%,Safe
+2025-01-14,Weekday,26,8,30,27%,Safe
+2025-04-28,Weekday,14,5,30,17%,Safe
+2025-10-07,Weekday,11,3,30,10%,Safe
+2025-02-28,Friday,41,15,30,50%,Medium Risk
+2025-01-29,Weekday,21,7,30,23%,Safe
+2025-06-20,Friday,6,22,30,73%,High Risk
+2025-04-18,Friday,4,23,30,77%,High Risk
+2025-05-12,Weekday,10,7,30,23%,Safe
+2025-04-18,Friday,31,8,30,27%,Safe
+2025-05-28,Weekday,38,4,30,13%,Safe
+2025-12-16,Weekday,11,2,30,7%,Safe
+2025-05-30,Friday,18,15,30,50%,Medium Risk
+2025-11-28,Friday,32,14,30,47%,Medium Risk
+2025-12-13,Saturday,31,19,30,63%,Medium Risk
+2025-03-13,Weekday,6,7,30,23%,Safe
+2025-08-09,Saturday,33,18,30,60%,Medium Risk
+2025-01-01,Weekday,20,6,30,20%,Safe
+2025-05-31,Saturday,4,16,30,53%,High Risk
+2025-06-21,Saturday,36,15,30,50%,Medium Risk
+2025-11-01,Saturday,10,15,30,50%,Medium Risk
+2025-11-19,Weekday,19,2,30,7%,Safe
+2025-01-20,Weekday,2,10,30,33%,Medium Risk
+2025-02-21,Friday,36,16,30,53%,Medium Risk
+2025-09-07,Sunday,30,18,30,60%,Medium Risk
+2025-09-15,Weekday,36,4,30,13%,Safe
+2025-11-17,Weekday,4,11,30,37%,Safe
+2025-03-01,Saturday,12,14,30,47%,Medium Risk
+2025-10-04,Saturday,19,16,30,53%,Medium Risk
+2025-12-29,Weekday,32,10,30,33%,Safe
+2025-05-13,Weekday,6,18,30,60%,Medium Risk
+2025-07-26,Saturday,25,20,30,67%,Medium Risk
+2025-08-12,Weekday,18,1,30,3%,Safe
+2025-08-09,Saturday,14,16,30,53%,Medium Risk
+2025-05-07,Weekday,6,20,30,67%,Medium Risk
+2025-10-25,Saturday,45,24,30,80%,Medium Risk
+2025-01-03,Friday,7,30,30,100%,Sell Out Likely
+2025-11-19,Weekday,19,1,30,3%,Safe
+2025-03-16,Sunday,6,24,30,80%,High Risk
+2025-03-11,Weekday,5,9,30,30%,Safe
+2025-05-20,Weekday,27,5,30,17%,Safe
+2025-06-20,Friday,11,18,30,60%,Medium Risk
+2025-08-14,Weekday,33,5,30,17%,Safe
+2025-09-25,Weekday,26,9,30,30%,Safe
+2025-10-20,Weekday,37,6,30,20%,Safe
+2025-03-23,Sunday,42,14,30,47%,Medium Risk
+2025-03-25,Weekday,8,9,30,30%,Safe
+2025-09-15,Weekday,29,9,30,30%,Safe
+2025-01-23,Weekday,45,6,30,20%,Safe
+2025-09-22,Weekday,3,14,30,47%,Medium Risk
+2025-05-30,Friday,7,20,30,67%,High Risk
+2025-08-04,Weekday,11,1,30,3%,Safe
+2025-08-11,Weekday,16,7,30,23%,Safe
+2025-03-24,Weekday,8,3,30,10%,Safe
+2025-04-09,Weekday,13,4,30,13%,Safe
+2025-09-02,Weekday,2,16,30,53%,Medium Risk
+2025-04-26,Saturday,12,17,30,57%,Medium Risk
+2025-07-25,Friday,42,24,30,80%,Medium Risk

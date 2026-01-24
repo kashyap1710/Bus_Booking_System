@@ -1,12 +1,7 @@
 import nodemailer from "nodemailer";
 
-/**
- * Send Booking Confirmation Email
- * Uses Ethereal Email for testing (no real emails sent to user, but preview link provided)
- */
 export async function sendBookingConfirmation(toEmail, bookingDetails) {
   try {
-    // 1. Create Transporter (Using Gmail)
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -15,9 +10,8 @@ export async function sendBookingConfirmation(toEmail, bookingDetails) {
       },
     });
 
-    // 3. Compose Email
     const info = await transporter.sendMail({
-      from: `"Sleeper Bus Co." <${process.env.EMAIL_USER}>`, // Use authenticated email
+      from: `"Sleeper Bus Co." <${process.env.EMAIL_USER}>`,
       to: toEmail,
       subject: `Booking Confirmed! ID: ${bookingDetails.bookingId}`,
       html: `
@@ -36,8 +30,30 @@ export async function sendBookingConfirmation(toEmail, bookingDetails) {
               <td style="padding: 10px;">${bookingDetails.journeyDate}</td>
             </tr>
             <tr style="background-color: #f3f4f6;">
+              <td style="padding: 10px;"><strong>Route:</strong></td>
+              <td style="padding: 10px;">${bookingDetails.fromStation} ➝ ${bookingDetails.toStation}</td>
+            </tr>
+            <tr>
               <td style="padding: 10px;"><strong>Seat Numbers:</strong></td>
               <td style="padding: 10px;">${bookingDetails.seats.join(", ")}</td>
+            </tr>
+            ${bookingDetails.meals && bookingDetails.meals.length > 0 ? `
+            <tr>
+              <td style="padding: 10px;"><strong>Meals:</strong></td>
+              <td style="padding: 10px;">
+                <ul style="margin: 0; padding-left: 20px;">
+                  ${bookingDetails.meals.map(m => `<li>${m.name} (x${m.quantity})</li>`).join('')}
+                </ul>
+              </td>
+            </tr>
+            ` : ''}
+            <tr style="background-color: #f3f4f6;">
+              <td style="padding: 10px;"><strong>Passengers:</strong></td>
+              <td style="padding: 10px;">
+                ${bookingDetails.passengerNames && bookingDetails.passengerNames.length > 0 
+                  ? bookingDetails.passengerNames.join(", ") 
+                  : "Guest"}
+              </td>
             </tr>
             <tr>
               <td style="padding: 10px;"><strong>Total Amount:</strong></td>
@@ -52,6 +68,9 @@ export async function sendBookingConfirmation(toEmail, bookingDetails) {
 
     console.log("---------------------------------------");
     console.log(`📧 Real Email sent successfully to ${toEmail}!`);
+    if (bookingDetails.meals && bookingDetails.meals.length > 0) {
+      console.log(`🍔 Meals included: ${bookingDetails.meals.map(m => `${m.name} (x${m.quantity})`).join(', ')}`);
+    }
     console.log("---------------------------------------");
 
   } catch (error) {
