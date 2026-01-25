@@ -9,6 +9,19 @@
  */
 
 export function predictSellOutRisk(journeyDate, totalSeats, bookedCount) {
+    // 0. Immediate "Sold Out" Check
+    if (totalSeats > 0 && bookedCount >= totalSeats) {
+        return {
+            score: 100,
+            label: "Sold Out",
+            features: {
+                daysLeft: 0,
+                isWeekend: false,
+                occupancyRate: "100%"
+            }
+        };
+    }
+
     // 1. Feature Engineering
     const travelDate = new Date(journeyDate);
     const today = new Date();
@@ -41,6 +54,11 @@ export function predictSellOutRisk(journeyDate, totalSeats, bookedCount) {
     // Feature C: Scarcity (The "Social Proof" factor)
     // As seats fill up, panic buying sets in.
     probability += (occupancyRate * 50);
+
+    // CRITICAL: If occupancy is very high (>90%), force High Risk
+    if (occupancyRate > 0.9) {
+        probability = Math.max(probability, 90);
+    }
 
     // 3. Activation / Normalization
     // Cap risk at 99% and floor at 10%

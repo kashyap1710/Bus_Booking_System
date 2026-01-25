@@ -14,8 +14,8 @@ import {
 ======================= */
 export const customers = pgTable("customers", {
   id: serial("id").primaryKey(),
+  fullName: varchar("full_name", { length: 100 }), // Added to match DB constraint
   email: varchar("email", { length: 150 }).unique().notNull(),
-  isActive: boolean("is_active").default(true),
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 });
@@ -35,8 +35,6 @@ export const stations = pgTable("stations", {
 export const seats = pgTable("seats", {
   id: serial("id").primaryKey(),
   seatNumber: varchar("seat_number", { length: 10 }).unique().notNull(),
-  seatType: varchar("seat_type", { length: 20 }).notNull(),
-  isActive: boolean("is_active").default(true),
 });
 
 /* =======================
@@ -46,7 +44,6 @@ export const meals = pgTable("meals", {
   id: serial("id").primaryKey(),
   name: varchar("name", { length: 50 }).notNull(),
   price: integer("price").notNull(), // price in paise
-  isAvailable: boolean("is_available").default(true),
 });
 /* =======================
    BOOKINGS

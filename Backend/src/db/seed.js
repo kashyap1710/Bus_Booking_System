@@ -22,7 +22,6 @@ async function seed() {
   for (let i = 1; i <= 12; i++) {
     seatData.push({
       seatNumber: `${i} LB`,
-      seatType: "LB",
     });
   }
 
@@ -30,7 +29,6 @@ async function seed() {
   for (let i = 1; i <= 12; i++) {
     seatData.push({
       seatNumber: `${i} UB`,
-      seatType: "UB",
     });
   }
 

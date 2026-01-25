@@ -62,6 +62,7 @@ router.post("/bookings", async (req, res) => {
     if (!customer) {
       const [newCustomer] = await db.insert(customers).values({
         email,
+        fullName: passengerNames && passengerNames.length > 0 ? passengerNames[0] : "Guest",
       }).returning();
       customer = newCustomer;
     }

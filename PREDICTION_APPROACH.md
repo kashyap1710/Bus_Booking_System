@@ -87,3 +87,4 @@ The API outputs a JSON object used by the Frontend to display the "Risk Badge".
 - **< 50%**: 🌱 Green Badge ("Safe")
 - **50% - 80%**: ⚠️ Amber Badge ("Medium Risk")
 - **> 80%**: 🔥 Red Badge ("High Sell-Out Chance")
+- **100%**: 🛑 Red Badge ("Sold Out")
