@@ -88,7 +88,7 @@ Run the application locally to test the User Flow: `http://localhost:5173`.
     {
       "id": 1,
       "seatNumber": "1 LB",
-      "available": true,
+      "available": true,@
       "gender": null
     },
     {
