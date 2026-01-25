@@ -57,7 +57,6 @@ export const bookings = pgTable("bookings", {
 
 
   journeyDate: date("journey_date").notNull(),
-  bookingDatetime: timestamp("booking_datetime").defaultNow(),
 
   fromStationIndex: integer("from_station_index").notNull(),
   toStationIndex: integer("to_station_index").notNull(),
