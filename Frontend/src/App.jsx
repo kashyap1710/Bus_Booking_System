@@ -10,13 +10,13 @@ import Toast from "./components/Toast";
 /* ---------------- BUS STOPS ---------------- */
 
 export const busStops = [
-  { name: "Ahmedabad", color: "bg-green-500", distance: 0 },
-  { name: "Vadodara", color: "bg-gray-500", distance: 110 },
-  { name: "Bharuch", color: "bg-gray-500", distance: 190 },
-  { name: "Surat", color: "bg-yellow-500", distance: 265 },
-  { name: "Vapi", color: "bg-pink-500", distance: 385 },
-  { name: "Virar", color: "bg-purple-500", distance: 535 },
-  { name: "Mumbai", color: "bg-blue-500", distance: 595 },
+  { name: "Ahmedabad", color: "bg-green-500", distance: 0, time: "05:00 PM" },
+  { name: "Vadodara", color: "bg-gray-500", distance: 110, time: "07:00 PM" },
+  { name: "Bharuch", color: "bg-gray-500", distance: 190, time: "08:30 PM" },
+  { name: "Surat", color: "bg-yellow-500", distance: 265, time: "10:00 PM" },
+  { name: "Vapi", color: "bg-pink-500", distance: 385, time: "12:30 AM" },
+  { name: "Virar", color: "bg-purple-500", distance: 535, time: "03:30 AM" },
+  { name: "Mumbai", color: "bg-blue-500", distance: 595, time: "05:00 AM" },
 ];
 
 /* ---------------- FARE CALCULATION ---------------- */

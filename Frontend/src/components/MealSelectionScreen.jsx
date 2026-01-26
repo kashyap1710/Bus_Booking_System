@@ -24,6 +24,9 @@ export default function MealSelectionScreen({
   const getMealPrice = () =>
     bookingData.meals.veg * 120 + bookingData.meals.nonVeg * 150;
 
+
+  const canOrderMeals = bookingData.fromStopIndex <= 2 && bookingData.toStopIndex >= 2;
+
   return (
     <div className="min-h-screen bg-gray-900 px-6 py-12">
       <div className="max-w-5xl mx-auto">
@@ -53,49 +56,71 @@ export default function MealSelectionScreen({
 
         {/* Card */}
         <div className="bg-gray-800 rounded-2xl shadow-lg shadow-black/30 p-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-            {/* Veg */}
-            <MealCard
-              title="Veg Meal"
-              price={120}
-              count={bookingData.meals.veg}
-              color="green"
-              onMinus={() => handleQuantityChange("veg", -1)}
-              onPlus={() => handleQuantityChange("veg", 1)}
-              disabledPlus={totalMeals >= bookingData.passengers}
-            />
-
-            {/* Non-Veg */}
-            <MealCard
-              title="Non-Veg Meal"
-              price={150}
-              count={bookingData.meals.nonVeg}
-              color="red"
-              onMinus={() => handleQuantityChange("nonVeg", -1)}
-              onPlus={() => handleQuantityChange("nonVeg", 1)}
-              disabledPlus={totalMeals >= bookingData.passengers}
-            />
-          </div>
-
-          <p className="text-center text-gray-400 mb-8">
-            Selected {totalMeals} of {bookingData.passengers} meals
-          </p>
-
-          {totalMeals > 0 && (
-            <div className="mb-8 bg-blue-900/20 rounded-xl p-6 flex justify-between items-center">
-              <span className="text-gray-300 text-lg">Total Meal Cost</span>
-              <span className="text-2xl font-semibold text-blue-400">
-                ₹{getMealPrice()}
-              </span>
+          
+          {!canOrderMeals ? (
+            <div className="text-center py-10">
+               <div className="w-20 h-20 bg-gray-700/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                 <Utensils className="text-gray-500" size={32} />
+               </div>
+               <h3 className="text-xl font-medium text-white mb-2">Meals Not Available</h3>
+               <p className="text-gray-400 max-w-md mx-auto mb-8">
+                 Sorry, meal service is only available for journeys that pass through or stop at 
+                 <span className="font-semibold text-blue-400"> Bharuch (Dinner Stop)</span>.
+               </p>
+               <button
+                onClick={onNext}
+                className="bg-blue-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-blue-700"
+              >
+                Continue without Meals
+              </button>
             </div>
-          )}
+          ) : (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                {/* Veg */}
+                <MealCard
+                  title="Veg Meal"
+                  price={120}
+                  count={bookingData.meals.veg}
+                  color="green"
+                  onMinus={() => handleQuantityChange("veg", -1)}
+                  onPlus={() => handleQuantityChange("veg", 1)}
+                  disabledPlus={totalMeals >= bookingData.passengers}
+                />
 
-          <button
-            onClick={onNext}
-            className="w-full bg-blue-600 text-white py-4 rounded-xl text-lg font-medium hover:bg-blue-700"
-          >
-            Continue
-          </button>
+                {/* Non-Veg */}
+                <MealCard
+                  title="Non-Veg Meal"
+                  price={150}
+                  count={bookingData.meals.nonVeg}
+                  color="red"
+                  onMinus={() => handleQuantityChange("nonVeg", -1)}
+                  onPlus={() => handleQuantityChange("nonVeg", 1)}
+                  disabledPlus={totalMeals >= bookingData.passengers}
+                />
+              </div>
+
+              <p className="text-center text-gray-400 mb-8">
+                Selected {totalMeals} of {bookingData.passengers} meals
+              </p>
+
+              {totalMeals > 0 && (
+                <div className="mb-8 bg-blue-900/20 rounded-xl p-6 flex justify-between items-center">
+                  <span className="text-gray-300 text-lg">Total Meal Cost</span>
+                  <span className="text-2xl font-semibold text-blue-400">
+                    ₹{getMealPrice()}
+                  </span>
+                </div>
+              )}
+
+              <button
+                onClick={onNext}
+                className="w-full bg-blue-600 text-white py-4 rounded-xl text-lg font-medium hover:bg-blue-700"
+              >
+                Continue
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

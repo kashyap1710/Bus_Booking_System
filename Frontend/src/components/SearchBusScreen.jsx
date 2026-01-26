@@ -79,7 +79,7 @@ export default function SearchBusScreen({
                 value={stop.name}
                 disabled={index >= bookingData.toStopIndex}
               >
-                {stop.name}
+                {stop.name} ({stop.time})
               </option>
             ))}
           </select>
@@ -101,7 +101,7 @@ export default function SearchBusScreen({
                 value={stop.name}
                 disabled={index <= bookingData.fromStopIndex}
               >
-                {stop.name}
+                {stop.name} ({stop.time})
               </option>
             ))}
           </select>
