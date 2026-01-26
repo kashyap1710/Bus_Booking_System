@@ -61,7 +61,7 @@ export default function SeatSelectionScreen({
         });
 
         // Backend returns { seats: [...], prediction: { score, label } }
-        const availableSeats = response.data.seats || response.data; 
+        const availableSeats = response.data.seats; 
         const predictionData = response.data.prediction;
 
         if (predictionData) setPrediction(predictionData);

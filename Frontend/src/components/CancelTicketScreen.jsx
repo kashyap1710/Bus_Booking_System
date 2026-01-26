@@ -58,7 +58,7 @@ export default function CancelTicketScreen({
           },
         });
 
-        const availableSeats = response.data;
+        const availableSeats = response.data.seats;
         
         setSeats((prevSeats) =>
           prevSeats.map((seat) => {
@@ -112,9 +112,8 @@ export default function CancelTicketScreen({
     const isBooked = seat.status === "booked";
 
     return (
-      <div className="relative group">
+      <div key={seat.id} className="relative group">
         <button
-          key={seat.id}
           onClick={() => isBooked && handleCancelSeat(seat)}
           disabled={!isBooked}
           className={`w-14 h-24 rounded-xl border-2 text-xs font-medium flex flex-col items-center justify-center relative ${seatClass(
