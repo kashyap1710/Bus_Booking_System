@@ -65,7 +65,7 @@ export default function BookingConfirmationScreen({ bookingData, onHome }) {
           <p className="text-gray-400 mb-6">
             {isCancelled
               ? "Your ticket has been cancelled."
-              : "Your sleeper bus ticket has been successfully booked"}
+              : "Your Krishna Travels bus ticket has been successfully booked"}
           </p>
 
           <RouteIndicator

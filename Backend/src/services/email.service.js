@@ -11,7 +11,7 @@ export async function sendBookingConfirmation(toEmail, bookingDetails) {
     });
 
     const info = await transporter.sendMail({
-      from: `"Sleeper Bus Co." <${process.env.EMAIL_USER}>`,
+      from: `"Krishna Travels" <${process.env.EMAIL_USER}>`,
       to: toEmail,
       subject: `Booking Confirmed! ID: ${bookingDetails.bookingId}`,
       html: `
@@ -61,7 +61,7 @@ export async function sendBookingConfirmation(toEmail, bookingDetails) {
             </tr>
           </table>
 
-          <p style="margin-top: 20px;">Thank you for choosing us!</p>
+          <p style="margin-top: 20px;">Thank you for choosing Krishna Travels!</p>
         </div>
       `,
     });

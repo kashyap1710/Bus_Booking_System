@@ -50,7 +50,7 @@ export default function SearchBusScreen({
     <div className="min-h-screen flex flex-col items-center bg-gray-900 px-4">
       <div className="text-center mt-10 mb-10">
         <h1 className="text-4xl font-semibold mb-2">
-          Sleeper Bus Booking
+          Krishna Travels
         </h1>
         <p className="text-lg text-gray-400">
           Choose Your Journey
