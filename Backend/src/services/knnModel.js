@@ -23,18 +23,13 @@ function normalize(val, min, max) {
 }
 
 // Load based on file structure
-// CSV is in root: d:\Study\Scale Tech\Sleeper Bus Booking System\mock_training_dataset.csv
-// This file is in: Backend/src/services/ml/knnModel.js (we'll place it here)
-// So we go up: ../../../mock_training_dataset.csv
-// Adjusting dynamic path:
 export function loadModel() {
     try {
         // Construct path to CSV relative to this service file
-        // We assume this file is in src/services/
         const csvPath = path.resolve(__dirname, '../../../../mock_training_dataset.csv');
         
         if (!fs.existsSync(csvPath)) {
-            console.warn(`[ML Model] Warning: Dataset not found at ${csvPath}. Using fallback rules.`);
+            console.warn(`[ML Model] Dataset not found at ${csvPath}. Using Rule Based System.`);
             return false;
         }
 
@@ -126,7 +121,7 @@ export function predictRisk(inputDaysLeft, inputIsWeekend, inputOccupancyRate) {
 
     let finalScore = weightedScore / totalWeight;
 
-    // Apply Post-Processing / Safety Nets (Hybrid Approach)
+    // Apply Post-Processing / Safety Nets
     // If occupancy > 90%, force extreme risk regardless of neighbors
     if (inputOccupancyRate > 0.9) finalScore = Math.max(finalScore, 95);
 

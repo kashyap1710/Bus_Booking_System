@@ -14,10 +14,10 @@ import { loadModel, predictRisk } from './knnModel.js';
 const isModelLoaded = loadModel();
 
 export function predictSellOutRisk(journeyDate, totalSeats, bookedCount) {
-    // 0. Immediate "Sold Out" Check (Deterministic, always keeps this)
+    // 0. Immediate "Sold Out" Check
     if (totalSeats > 0 && bookedCount >= totalSeats) {
         return {
-            score: 105, // >100 to sort at top
+            score: 105,
             label: "Sold Out",
             features: {
                 daysLeft: 0,
@@ -48,8 +48,8 @@ export function predictSellOutRisk(journeyDate, totalSeats, bookedCount) {
         mlResult = predictRisk(daysLeft, isWeekend, occupancyRate);
     }
 
-    // 3. Fallback / Hybrid Logic
-    // If ML prediction exists, use it. Otherwise, use legacy heuristic.
+    // 3. Prediction Logic
+    // If ML prediction exists, use it. Otherwise, use rule-based logic.
     if (mlResult) {
         return {
             score: mlResult.score,
@@ -58,13 +58,12 @@ export function predictSellOutRisk(journeyDate, totalSeats, bookedCount) {
                 daysLeft,
                 isWeekend,
                 occupancyRate: (occupancyRate * 100).toFixed(1) + "%",
-                modelType: "ML (KNN)" // Debug info
+                modelType: "ML"
             }
         };
     }
 
-    // --- LEGACY FALLBACK (Rule Based) ---
-    // Kept for safety if CSV is missing
+    // --- Rule Based Logic ---
     let probability = 10; 
 
     if (daysLeft <= 1) probability += 50;
@@ -91,7 +90,7 @@ export function predictSellOutRisk(journeyDate, totalSeats, bookedCount) {
             daysLeft,
             isWeekend,
             occupancyRate: (occupancyRate * 100).toFixed(1) + "%",
-            modelType: "Heuristic (Fallback)"
+            modelType: "Rule Based"
         }
     };
 }

@@ -111,7 +111,7 @@ Run the application locally to test the User Flow: `http://localhost:5173`.
 }
 ```
 
-## 🧠 Data Science (Part 4)
+## 🧠 Data Science Module
 
 - [Prediction Approach & Model](./PREDICTION_APPROACH.md)
-- [Mock Training Dataset](./mock_training_dataset.csv)
+- [Training Dataset](./mock_training_dataset.csv)

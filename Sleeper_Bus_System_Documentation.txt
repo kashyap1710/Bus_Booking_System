@@ -167,9 +167,10 @@ ________________________________________
 5.2 Prediction Model Design
 File: predictionModel.js
 Type:
-Rule-based heuristic (mock ML model)
+K-Nearest Neighbors (KNN) Machine Learning
 Chosen because:
-•	No real historical data yet
+•	Data-driven predictions
+•	Scalable architecture
 •	Explainable
 •	Evaluation-friendly
 •	ML-ready architecture
@@ -202,10 +203,9 @@ ________________________________________
 6. MOCK TRAINING DATASET
 File: mock_training_dataset.csv
 Purpose:
-•	Demonstrates ML thinking
-•	Shows correlation awareness
-•	Proves system is ML-ready
-~1200 rows simulate 1 year of bookings.
+•	Training data for KNN model
+•	Historical booking patterns
+800+ rows of historical booking data.
 ________________________________________
 7. ML FEEDBACK LOOP (ADVANCED DESIGN)
 Two stored fields enable learning:

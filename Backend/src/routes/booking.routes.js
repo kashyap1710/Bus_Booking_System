@@ -118,7 +118,7 @@ router.post("/bookings", async (req, res) => {
     // 📧 Send Email Notification (Non-blocking) - Only if transaction succeeds
     try {
       if (email && bookingId) {
-        // Fetch Station Names (Read-only, can use main db or tx, doesn't matter much here but main db is fine)
+        // Fetch Station Names
         const fromStationData = await db.select({ name: stations.cityName }).from(stations).where(eq(stations.stationIndex, fromIndex)).limit(1);
         const toStationData = await db.select({ name: stations.cityName }).from(stations).where(eq(stations.stationIndex, toIndex)).limit(1);
 
@@ -141,7 +141,7 @@ router.post("/bookings", async (req, res) => {
           });
         }
 
-        // We don't await this so it runs in background
+        // Non-blocking execution
         sendBookingConfirmation(email, {
           bookingId: bookingId,
           journeyDate,

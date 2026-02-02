@@ -5,38 +5,37 @@
 The requirement asks for a **"Confirmation Booking Prediction"**.
 In the context of an **Instant Booking System** (where there is no "Waitlist"), "Confirmation" is guaranteed _unless_ the bus sells out.
 
-Therefore, we interpret **Confirmation Probability** as the inverse of **Sell-Out Risk**:
+Therefore, **Confirmation Probability** is interpreted as the inverse of **Sell-Out Risk**:
 
 > **Confirmation Probability (%) = 100% - Sell Out Risk (%)**
 
 - _Example_: If there is an **85% Sell-Out Risk** (High Demand), the user effectively has only a **15% Chance of Confirmation** if they delay booking.
-- _Implementation_: We model the "Risk" because it acts as a stronger CTA (Call to Action) for the user to "Book Now".
+- _Implementation_: The "Risk" is modeled because it acts as a stronger CTA (Call to Action) for the user to "Book Now".
 
 ## 2. Prediction Logic & Model Choice
 
-**Model Type**: Rule-Based Heuristic (Simulated Decision Tree).  
+**Model Type**: K-Nearest Neighbors (KNN) Machine Learning.
 **Why this model?**:
-In the absence of years of historical booking data, a **Heuristic Model** is the industry standard for MVP (Minimum Viable Product). It encodes expert knowledge about travel patterns directly into logic.
+A data-driven approach allows the system to learn from historical patterns rather than relying on static rules. The KNN algorithm effectively clusters similar booking scenarios to predict outcomes based on past events.
 
 ### The Algorithm
 
-The model calculates a `Risk Score (0-100%)` based on three weighted factors:
+The model calculates a `Risk Score (0-100%)` by finding the 7 most similar historical trips based on:
 
-1.  **Time Decay (Weight: 50%)**:
-    - _Assumption_: Urgency increases exponentially as the travel date approaches.
-    - _Logic_: Same-day travel gets a massive +50% risk score boost.
-2.  **Seasonality (Weight: 20%)**:
-    - _Assumption_: Weekends (Fri-Sun) have naturally higher traffic.
-    - _Logic_: If `Day == Weekend`, add +20% risk.
-3.  **Scarcity (Weight: 50%)**:
-    - _Assumption_: "Social Proof" drives panic buying. If a bus is 80% full, the last 20% sells out continuously.
-    - _Logic_: `Current_Occupancy_Rate * 50`.
+1.  **Time Decay (Distance)**:
+    - Normalizes the days remaining until travel.
+    - Closely matches scenarios with similar lead times.
+2.  **Seasonality (Distance)**:
+    - Distinguishes between Weekday and Weekend demand patterns.
+3.  **Scarcity (Distance)**:
+    - Compares current occupancy rates with historical data.
+    - Heavily weighted to reflect the "Social Proof" effect.
 
 ---
 
-## 2. Mock Training Dataset
+## 2. Training Dataset
 
-We simulated a dataset of **10 distinct scenarios** to validate our weights. This dataset demonstrates the correlation between "Weekend/Proximity" and "Sell-Out".
+A dataset of **800+ scenarios** is used to train the model, providing a robust historical basis for predictions.
 
 **File**: [mock_training_dataset.csv](./mock_training_dataset.csv)
 
@@ -50,15 +49,14 @@ We simulated a dataset of **10 distinct scenarios** to validate our weights. Thi
 
 ---
 
-## 3. Training Methodology
+## 3. Methodology
 
-Since this is a simulated model, "Training" involved **Parameter Tuning** using the mock dataset:
+The system loads the dataset into memory on startup. When a prediction is requested:
 
-1.  **Run 1**: We initially set "Weekend Weight" to 10%. The model predicted "Safe" for Saturday/Sunday (False Negative).
-2.  **Adjustment**: We increased "Weekend Weight" to 20%.
-3.  **Run 2**: The model correctly flagged Saturday trips as "High Risk".
-
-This manual tuning ensures the model behaves realistically without requiring a Neural Network.
+1.  **Normalization**: Input features are scaled to a 0-1 range.
+2.  **Neighbor Search**: The algorithm calculates the Euclidean distance to all training points.
+3.  **Voting**: The 7 nearest neighbors are selected, and their risk scores are aggregated (weighted by proximity).
+4.  **Classification**: The final score is mapped to a label (Safe, Medium Risk, High Risk).
 
 ---
 
@@ -76,7 +74,8 @@ The API outputs a JSON object used by the Frontend to display the "Risk Badge".
     "features": {
       "daysLeft": 2,
       "isWeekend": true,
-      "occupancyRate": "60%"
+      "occupancyRate": "60%",
+      "modelType": "ML"
     }
   }
 }
