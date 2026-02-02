@@ -8,11 +8,16 @@
  * 3. Supply Scarcity (Current Occupancy %)
  */
 
+import { loadModel, predictRisk } from './knnModel.js';
+
+// Attempt to train/load the model on startup
+const isModelLoaded = loadModel();
+
 export function predictSellOutRisk(journeyDate, totalSeats, bookedCount) {
-    // 0. Immediate "Sold Out" Check
+    // 0. Immediate "Sold Out" Check (Deterministic, always keeps this)
     if (totalSeats > 0 && bookedCount >= totalSeats) {
         return {
-            score: 100,
+            score: 105, // >100 to sort at top
             label: "Sold Out",
             features: {
                 daysLeft: 0,
@@ -28,7 +33,7 @@ export function predictSellOutRisk(journeyDate, totalSeats, bookedCount) {
     
     // Calculate Days Left (Lead Time)
     const diffTime = travelDate - today;
-    const daysLeft = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+    const daysLeft = Math.max(Math.ceil(diffTime / (1000 * 60 * 60 * 24)), 0); 
 
     // Calculate Weekday (0=Sun, 6=Sat)
     const dayOfWeek = travelDate.getDay();
@@ -37,35 +42,44 @@ export function predictSellOutRisk(journeyDate, totalSeats, bookedCount) {
     // Calculate Occupancy Ratio
     const occupancyRate = totalSeats > 0 ? (bookedCount / totalSeats) : 0;
 
-    // 2. Inference Logic (The "Weights")
-    let probability = 10; // Base Bias
+    // 2. Machine Learning Inference (K-Nearest Neighbors)
+    let mlResult = null;
+    if (isModelLoaded) {
+        mlResult = predictRisk(daysLeft, isWeekend, occupancyRate);
+    }
 
-    // Feature A: Time Decay (Closer = Higher Risk)
-    // If booking for today/tomorrow, urgency is extreme.
+    // 3. Fallback / Hybrid Logic
+    // If ML prediction exists, use it. Otherwise, use legacy heuristic.
+    if (mlResult) {
+        return {
+            score: mlResult.score,
+            label: mlResult.label,
+            features: {
+                daysLeft,
+                isWeekend,
+                occupancyRate: (occupancyRate * 100).toFixed(1) + "%",
+                modelType: "ML (KNN)" // Debug info
+            }
+        };
+    }
+
+    // --- LEGACY FALLBACK (Rule Based) ---
+    // Kept for safety if CSV is missing
+    let probability = 10; 
+
     if (daysLeft <= 1) probability += 50;
     else if (daysLeft <= 3) probability += 30;
     else if (daysLeft <= 7) probability += 15;
 
-    // Feature B: Seasonality (Weekend Boost)
-    if (isWeekend) {
-        probability += 20;
-    }
+    if (isWeekend) probability += 20;
 
-    // Feature C: Scarcity (The "Social Proof" factor)
-    // As seats fill up, panic buying sets in.
     probability += (occupancyRate * 50);
 
-    // CRITICAL: If occupancy is very high (>90%), force High Risk
-    if (occupancyRate > 0.9) {
-        probability = Math.max(probability, 90);
-    }
+    if (occupancyRate > 0.9) probability = Math.max(probability, 90);
 
-    // 3. Activation / Normalization
-    // Cap risk at 99% and floor at 10%
     probability = Math.min(Math.round(probability), 99);
     probability = Math.max(probability, 10);
 
-    // 4. Classification
     let label = "Safe";
     if (probability > 80) label = "High Risk";
     else if (probability > 50) label = "Medium Risk";
@@ -76,7 +90,8 @@ export function predictSellOutRisk(journeyDate, totalSeats, bookedCount) {
         features: {
             daysLeft,
             isWeekend,
-            occupancyRate: (occupancyRate * 100).toFixed(1) + "%"
+            occupancyRate: (occupancyRate * 100).toFixed(1) + "%",
+            modelType: "Heuristic (Fallback)"
         }
     };
 }
