@@ -44,7 +44,7 @@ export function loadModel() {
             if (cols.length < 7) return null;
 
             // Columns: Journey_Date, Day_Type, Days_Before_Travel, Booked_Seats, Total_Seats, Occupancy_Percent, Outcome_Label
-            // We need: Days_Before_Travel, Day_Type (as boolean), Occupancy_Percent, Outcome_Label
+            // Days_Before_Travel, Day_Type (as boolean), Occupancy_Percent, Outcome_Label
             
             const daysLeft = parseFloat(cols[2]);
             const dayType = cols[1].trim(); 
