@@ -74,7 +74,7 @@ export default function BookingConfirmationScreen({ bookingData, onHome }) {
           />
         </div>
 
-        {/* Card */}
+        
         <div className="bg-gray-800 rounded-2xl shadow-lg shadow-black/30 p-8 md:p-10">
           {/* Booking ID */}
           <div className="pb-6 mb-6 border-b border-gray-700">

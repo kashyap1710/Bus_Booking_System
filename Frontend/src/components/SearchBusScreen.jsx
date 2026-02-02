@@ -139,7 +139,7 @@ export default function SearchBusScreen({
             value={bookingData.passengers}
             onChange={(e) => {
               const val = e.target.value;
-              // Allow only legitimate digits
+              // Allow only digits
               if (val === "") {
                 updateBookingData({ passengers: "" });
                 return;
@@ -149,7 +149,7 @@ export default function SearchBusScreen({
 
               let num = parseInt(val);
               
-              // If number > 6, ignore the last keystroke (don't update state)
+              // If number > 6, ignore the last keystroke
               if (num > 6) return;
               if (num < 1) num = 1;
 

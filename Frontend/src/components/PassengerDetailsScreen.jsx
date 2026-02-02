@@ -162,7 +162,7 @@ export default function PassengerDetailsScreen({
                         value={bookingData.passengerAges[index] || ""}
                         onChange={(e) => {
                           const val = e.target.value;
-                          // Prevent infinite zeros or leading zeros (e.g. 00, 01)
+                          // Prevent infinite zeros or leading zeros
                           if (val.length > 1 && val.startsWith("0")) return;
 
                           if (
@@ -279,7 +279,6 @@ export default function PassengerDetailsScreen({
   );
 }
 
-/* ---------- Helper ---------- */
 function SummaryItem({ label, children }) {
   return (
     <div className="border-b border-gray-700 py-4">

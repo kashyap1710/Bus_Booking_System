@@ -54,7 +54,6 @@ export default function MealSelectionScreen({
           <div className="w-10" />
         </div>
 
-        {/* Card */}
         <div className="bg-gray-800 rounded-2xl shadow-lg shadow-black/30 p-10">
           
           {!canOrderMeals ? (
@@ -127,7 +126,6 @@ export default function MealSelectionScreen({
   );
 }
 
-/* ---------- Components ---------- */
 
 function MealCard({
   title,

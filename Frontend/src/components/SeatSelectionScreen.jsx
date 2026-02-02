@@ -189,7 +189,7 @@ export default function SeatSelectionScreen({
               />
             </div>
             
-            {/* 🔴 PREDICTION BADGE */}
+            {/* PREDICTION BADGE */}
             {prediction && (
               <div className={`mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border ${
                 prediction.score > 80 ? "bg-red-500/10 border-red-500 text-red-500" :
@@ -274,7 +274,6 @@ export default function SeatSelectionScreen({
   );
 }
 
-/* ---------- Helpers ---------- */
 
 function Legend({ color, label }) {
   return (
